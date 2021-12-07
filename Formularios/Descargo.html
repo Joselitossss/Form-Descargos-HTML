@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <div id="formdiv">  
+        <form action="conexion.php" method="post">
+        <div id="logo">
+            <img id="LogIM" src="img/logo.png" alt="ADR"/>
+        </div>    
+        <div id=title>
+           <h1 id="titleN">FORMULARIO DE SOLICITUD Y CAMBIO DE EQUIPOS COMUNICACION MOVIL</h1>
+        </div>
+        <div id="fecha">
+            <label>Fecha:</label>
+            <input type="date" name="fecha_form">
+        </div>
+        <div id="infoP">
+            <table>
+                <tr>    
+                    <th colspan="4">
+                        INFORMACION DEL USUARIO
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Nombre del Usuario:</label>
+                    </td>
+                    <td class="imptxt">
+                        <input type="text" name="user_name" maxlength="20">
+                    </td>
+                    <td>
+                        <label>Número de Empleado:</label>
+                    </td>
+                    <td id="empl_num" class="imptxt">
+                        <input type="number" name="empl_num">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Carg/Puesto:</label>
+                    </td>
+                    <td class="imptxt">
+                        <input type="text" name="Cargo">
+                    </td>
+                    <td>
+                        <label>Localidad:</label>
+                    </td>
+                    <td class="imptxt">
+                        <input type="text" name="locate">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Departamento:</label>
+                    </td>
+                    <td class="imptxt">
+                        <input type="text" name="dept">
+                    </td>
+                    <td>
+                        <label>Extensión:</label>
+                    </td>
+                    <td class="imptxt">
+                        <input type="text" name="ext">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Imputación:</label>
+                    </td>
+                    <td class="imptxt">
+                        <input type="text" name="imputacion">
+                    </td>
+                    <td>
+                        <label>No. de Flota:</label>
+                    </td>
+                    <td class="imptxt">
+                        <input type="tel" name="flota">
+                    </td>
+                </tr>
+            </table>    
+        </div>
+
+        <button type="submit" name="enviar">Enviar</button>
+        </form>
+    </div>
+
+    </body>
+</html>

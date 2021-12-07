@@ -1,0 +1,85 @@
+form{
+    background-color: blanchedalmond;
+    width: 700px;
+    /*text-align: center;*/ 
+    display:inline-table;
+    height: 100%;
+    border: 2px solid red;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+#formdiv{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    height: 950px;
+}
+
+#logo{
+    width: 20% ;
+    float: left;
+   /*background-image: url(img/logo.png);*/
+   text-align: center;
+   height: 10%;
+   overflow:hidden;
+    display:flex;
+    border: 1px solid black;
+}
+
+#LogIM{
+width: 100%;
+height:auto;
+}
+
+#title{
+    width: 80%;
+    float:left;
+    height: 10%;
+    overflow:hidden;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#titleN{
+    width: 100%;
+    height: auto;
+    font-size: 100%;
+}
+#fecha{
+    text-align: right;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#infoP{
+    width: 100%;
+    text-align: center;
+}
+label{
+    font-size: 70%;
+}
+table{
+    text-align: right;
+    margin: 0 auto; 
+    width: 100%;
+    border: 1px solid red;
+}
+th{
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border: 1px solid black;
+    width: 100%;
+}
+td{
+    margin: 0 auto;
+}
+.imptxt{
+    text-align: left;
+}
