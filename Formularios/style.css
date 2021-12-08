@@ -107,11 +107,11 @@ td{
 }
 .TB-sol-lbl{
     text-align: left;
-    width: 50%;
 }
 .TB-sol-th{
     padding: 0;
     font-size: small;
+    width: 100%;
 }
 #TB-equip-div{
     float: right;
@@ -123,4 +123,7 @@ td{
 }
 .TB-equip-input{
     text-align: left;
+}
+.TB-sc-div{
+    width: 100%;
 }
