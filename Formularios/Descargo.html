@@ -9,12 +9,14 @@
     <body>
     <div id="formdiv">  
         <form action="conexion.php" method="post">
-        <div id="logo">
-            <img id="LogIM" src="img/logo.png" alt="ADR"/>
-        </div>    
-        <div id=title>
-           <h1 id="titleN">FORMULARIO DE SOLICITUD Y CAMBIO DE EQUIPOS COMUNICACION MOVIL</h1>
-        </div>
+            <div id="headform">
+                <div id="logo">
+                    <img id="LogIM" src="img/logo.png" alt="ADR"/>
+                </div>    
+                <div id=title>
+                    <h1 id="titleN">FORMULARIO DE SOLICITUD Y CAMBIO DE EQUIPOS COMUNICACION MOVIL</h1>
+                </div>
+            </div>
         <div id="fecha">
             <label>Fecha:</label>
             <input type="date" name="fecha_form">
@@ -82,10 +84,59 @@
                         <input type="tel" name="flota">
                     </td>
                 </tr>
-            </table>    
+            </table>
         </div>
-
-        <button type="submit" name="enviar">Enviar</button>
+        <div id="TB-sol-div">
+            <table id="TB-sol">
+                <tr>
+                    <th class="TB-sol-th" colspan="4">
+                        TIPO DE SOLICITUD
+                    </th>
+                </tr>
+                <tr>
+                    <td class="TB-sol-chk"><input type="checkbox" name="asig"></td>
+                    <td class="TB-sol-lbl"><label for="asig">Asignación</label></td>
+                    <td class="TB-sol-chk"><input type="checkbox" name="Prest"></td>
+                    <td class="TB-sol-lbl"><Label for="Prest">Préstamo</Label></td>
+                </tr>
+                <tr>
+                    <td class="TB-sol-chk"><input type="checkbox" name="rasig"></td>
+                    <td class="TB-sol-lbl"><label for="rasig">Reasignación</label></td>
+                    <td class="TB-sol-chk"><input type="checkbox" name="Reparacion"></td>
+                    <td class="TB-sol-lbl"><Label for="Reparacion">Reparación</Label></td>
+                </tr>
+                <tr>
+                    <td class="TB-sol-chk"><input type="checkbox" name="cambio"></td>
+                    <td class="TB-sol-lbl"><label for="cambio">Cambio de equipo</label></td>
+                    <td class="TB-sol-chk"><input type="checkbox" name="simcard"></td>
+                    <td class="TB-sol-lbl"><Label for="simcard">Reposición Sim Card</Label></td>
+                </tr>
+            </table>
+        </div>
+        <div id="TB-equip-div">
+            <table id="TB-equip">
+                <tr>
+                    <th class="TB-sol-th" colspan="4">
+                        TIPO Y MODELO DE EQUIPO
+                    </th>
+                </tr>
+                <tr>
+                    <td class="TB-sol-chk"><input type="checkbox" name="celular"></td>
+                    <td class="TB-sol-lbl"><label for="celular">Celular</label></td>
+                    <td class="TB-sol-chk"><input type="checkbox" name="lpt"></td>
+                    <td class="TB-sol-lbl"><Label for="lpt">Laptop</Label></td>
+                </tr>
+                <tr>
+                    <td class="TB-equip-lbl"><label for="imei">IMEI</label></td>
+                    <td class="TB-equip-input" colspan="3"><input type="text" name="imei"></td>
+                </tr>
+                <tr>
+                    <td class="TB-equip-lbl"><label for="model">Modelo</label></td>
+                    <td class="TB-equip-input" colspan="3"><input type="text" name="model"></td>
+                </tr>
+            </table>
+        </div>
+        
         </form>
     </div>
 
