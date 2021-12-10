@@ -127,3 +127,59 @@ td{
 .TB-sc-div{
     width: 100%;
 }
+
+#TB-R-div{
+    float: left;
+    padding: 0px, 3px, 0px, 2px;
+    width: 45%;
+}
+
+#TB-R{
+    height: 40px;
+    width: 400px;
+}
+
+.TB-R-th{
+    padding: 0;
+    font-size: small;
+    width: 100%;
+}
+
+#TB-M-div{
+    float: right;
+    padding: 0px, 3px, 0px, 2px;
+    width: 43.6%;
+}
+
+#TB-M{
+    height: 40px;
+    width: 306px;
+}
+
+.TB-M-th{
+    padding: 0;
+    margin: 0%;
+    font-size: small;
+    width: 100%;
+}
+
+/* The properties that affect the checkboxes and th */
+.TB-lbl-R{
+    display: flex;
+    float: left;
+    padding: 0%;
+    margin: 0%;
+    font-size: small;
+    width: 100%;
+}
+
+
+.TB-chk-R{
+    padding: 0%;
+    margin: 0%;
+    font-size: small;
+    width: 100%;
+    display: flex;
+    float: right;
+
+}
