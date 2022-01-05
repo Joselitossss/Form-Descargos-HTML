@@ -1,5 +1,5 @@
 form{
-    background-color: blanchedalmond;
+    background-color: rgb(45, 117, 111);
     width: 700px;
     /*text-align: center;*/ 
     display:inline-table;
@@ -186,7 +186,7 @@ td{
 }
 
 .TB-as-th{
-    padding: 0;
+    padding-top: 0px;
     font-size: medium;
     width: 100%;
 }
@@ -194,3 +194,77 @@ td{
 .TB-lbl-as{
    display:flex;
 }
+
+.TB-js-div{
+   float: left;
+    padding-top: 5px;
+    width: 45%;
+}
+
+/*#TB-js{
+    
+}*/
+
+.TB-js-th{
+    display: flex;
+    padding: 0;
+    font-size: small;
+    width: 100%;
+}
+
+.inpt_PI{
+text-align: left;
+padding-top: 0px;
+padding-left: 1px;
+border-radius: 1px solid;
+}
+
+/*.ns1{
+    width:150px;    
+    border-top:1px solid rgb(0, 0, 0);
+    position: relative;
+    top:10px;
+    float:left;
+}*/
+
+/*.ns2{
+        width:150px;    
+        border-top:1px solid rgb(0, 0, 0);
+        position: relative;
+        top:10px;
+        float:right;
+}
+*/
+/*.ns3{
+    margin:0px 25% 0px;
+    width: 200px;    
+    border-top:1px solid rgb(0, 0, 0);
+    position: relative;
+    top:10px;
+    float:right;
+    margin-right: 250px;
+    margin-left: 120px;
+    padding-right: 25px;
+}*/
+
+.lbl-as{
+   font-size: medium;
+   font-weight: bold;
+   position: center;
+}
+
+.lbl-eq{
+    width: 85px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.Fde1{
+    display: block;
+    text-align: left;
+}
+
+.Fde2{
+    padding-right: 80px;   
+}
+
