@@ -187,7 +187,7 @@ td{
 
 .TB-as-th{
     padding-top: 0px;
-    font-size: medium;
+    font-size: small;
     width: 100%;
 }
 
@@ -208,6 +208,7 @@ td{
 .TB-js-th{
     display: flex;
     padding: 0;
+    margin-top: 7px;
     font-size: small;
     width: 100%;
 }
@@ -254,6 +255,7 @@ border-radius: 1px solid;
 }
 
 .lbl-eq{
+    font-size: small;
     width: 85px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -277,16 +279,11 @@ border-bottom: 1px solid rgb(0, 0, 0) !important;
     width: 300px;
     border: 0px;
     outline: none;
-    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 210px;
     background: transparent;
-    border-bottom: 1px solid rgb(0, 0, 0) !important;
-    }
-
-.inpFde3{
-    width: 200px;
-    outline: none;
-    background: transparent;
-    border: 0px;
     border-bottom: 1px solid rgb(0, 0, 0) !important;
     }
 
@@ -298,9 +295,9 @@ border-bottom: 1px solid rgb(0, 0, 0) !important;
 .Nr{
 height: 35px;
 display: flex;
-justify-content: left;
-align-items: left;
+justify-content: center;
+align-items: center;
 font-size: medium;
 font-weight: bold;
-padding-left: 85px;
+padding-left: 15px;
 }
