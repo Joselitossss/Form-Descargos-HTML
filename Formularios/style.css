@@ -1,10 +1,10 @@
 form{
-    background-color: rgb(45, 117, 111);
+    background-color: rgb(255, 255, 255);
     width: 700px;
     /*text-align: center;*/ 
     display:inline-table;
     height: 100%;
-    border: 2px solid red;
+    border: 2px solid rgb(0, 0, 0);
 }
 
 div {
@@ -219,23 +219,23 @@ padding-left: 1px;
 border-radius: 1px solid;
 }
 
-/*.ns1{
+.ns1{
     width:150px;    
     border-top:1px solid rgb(0, 0, 0);
     position: relative;
     top:10px;
     float:left;
-}*/
+}
 
-/*.ns2{
+.ns2{
         width:150px;    
         border-top:1px solid rgb(0, 0, 0);
         position: relative;
         top:10px;
         float:right;
 }
-*/
-/*.ns3{
+
+.ns3{
     margin:0px 25% 0px;
     width: 200px;    
     border-top:1px solid rgb(0, 0, 0);
@@ -245,7 +245,7 @@ border-radius: 1px solid;
     margin-right: 250px;
     margin-left: 120px;
     padding-right: 25px;
-}*/
+}
 
 .lbl-as{
    font-size: medium;
@@ -262,9 +262,45 @@ border-radius: 1px solid;
 .Fde1{
     display: block;
     text-align: left;
+    height: 25px;
 }
+
+.inpFde1{
+width: 200px;
+outline: none;
+background: none;
+border: none;
+border-bottom: 1px solid rgb(0, 0, 0) !important;
+}
+
+.inpFde2{
+    width: 300px;
+    border: 0px;
+    outline: none;
+    margin-left: 20px;
+    background: transparent;
+    border-bottom: 1px solid rgb(0, 0, 0) !important;
+    }
+
+.inpFde3{
+    width: 200px;
+    outline: none;
+    background: transparent;
+    border: 0px;
+    border-bottom: 1px solid rgb(0, 0, 0) !important;
+    }
 
 .Fde2{
-    padding-right: 80px;   
+   padding-right: 20px;   
+   width: 300px;
 }
 
+.Nr{
+height: 35px;
+display: flex;
+justify-content: left;
+align-items: left;
+font-size: medium;
+font-weight: bold;
+padding-left: 85px;
+}
