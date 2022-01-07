@@ -113,6 +113,7 @@ td{
     font-size: small;
     width: 100%;
 }
+
 #TB-equip-div{
     float: right;
     padding-top: 5px;
@@ -163,8 +164,12 @@ td{
     width: 100%;
 }
 
+.ACM{
+    width: 396px;
+    flex-wrap: nowrap;
+}
 /* The properties that affect the label and th */
-.TB-lbl-R{
+/*.TB-lbl-R{
     display: flex;
     justify-content: center;
     float: left;
@@ -174,7 +179,7 @@ td{
     margin: 0%;
     font-size: small;
     width: 100%;
-}
+}*/
 
 .TB-lbl-M{
     display: flex;
@@ -192,6 +197,7 @@ td{
 }
 
 .TB-lbl-as{
+    padding: 0px;
    display:flex;
 }
 
@@ -249,7 +255,7 @@ border-radius: 1px solid;
 }
 
 .lbl-as{
-   font-size: medium;
+   font-size: large;
    font-weight: bold;
    position: center;
 }

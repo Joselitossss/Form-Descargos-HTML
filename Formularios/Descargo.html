@@ -30,10 +30,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <label>Nombre del Usuario:</label>
+                        <label class="Test">Nombre del Usuario:</label>
                     </td>
                     <td class="imptxt">
-                        <input type="text" name="user_name" maxlength="20">
+                        <input type="text" name="user_name">
                     </td>
                     <td>
                         <label>Número de Empleado:</label>
@@ -172,42 +172,54 @@
 
   <table>
 
-        <th class="TB-lbl-R" colspan="2">
+    <select name="AccesMovil" class="ACM">
+        <option value="1">Supervisores y Subgerentes: Área técnica, pérdida, comercial, distribución, tecnología</option> 
+        <option value="2">Choferes y mensajeros</option> 
+        <option value="3">Coordinadores (Mant. Edificio, Transportación, Almacén, Comercial, Seguridad Física e Industrial)</option>
+        <option value="4">Arquitectos de Servicios Generales y coordinadores</option> 
+        <option value="5">Coordinadores de Comunicaciones Estrategia y Gestión Social</option> 
+        <option value="6">Gerentes Zonales y Subgerentes, Coordinadores de Comunicaciones Estrategia y Gestión Social</option> 
+        <option value="7">Gerentes que se reportan a Directores</option>
+        <option value="8">Directores</option>
+        <option value="9">Gerente General</option>
+     </select>
+
+  <!--  <th class="TB-lbl-R" colspan="2">
            Supervisores y Subgerentes: Área técnica, pérdida, comercial, distribución, tecnología
        </th>
     
-    <!-- *********** --> 
+     
 
        <th class="TB-lbl-R" colspan="2" style="padding-bottom: 3.2px;">
         Choferes y mensajeros            
      </th>
      
-     <!-- *********** --> 
+      
 
      <th class="TB-lbl-R" colspan="2">
         Coordinadores (Mant. Edificio, Transportación, Almacén, Comercial, Seguridad Física e Industrial)                       
     </th>
     
-    <!-- *********** --> 
+     
 
     <th class="TB-lbl-R" colspan="2" style="padding-bottom: 13px;">
         Arquitectos de Servicios Generales y coordinadores                    
     </th>
     
-    <!-- *********** --> 
+   
 
     <th class="TB-lbl-R" colspan="2">
         Coordinadores de Comunicaciones Estrategia y Gestión Social	                         
     </th>
     
-<!-- *********** --> 
+
 
     <th class="TB-lbl-R" colspan="2">
         Gerentes Zonales y Subgerentes, Coordinadores de Comunicaciones Estrategia y Gestión Social.            
                      
     </th>
     
-<!-- *********** --> 
+ 
 
     <th class="TB-lbl-R" colspan="2" style="padding-bottom: 5px;">
         Gerentes que se reportan a Directores       
@@ -217,12 +229,12 @@
 
     <th class="TB-lbl-R" colspan="2" style="padding-bottom: 7px;">
         Directores        
-           <!-- <td class="TB-chk-R"><input type="checkbox" name="lpt"></td>     -->    
+          
     </th>
     
     <th class="TB-lbl-R" colspan="2" style="padding-bottom: 5px;">
         Gerente General    
-    </th>
+    </th> -->
 
  <!-- *********** -->   
 
@@ -351,7 +363,7 @@
  <!-- end name and signature -->
 
  <div>
-     <label for="text" class="lbl-as">Nombre y firma <br> Director TIC</label>
+     <label for="text" class="lbl-as">Director TIC</label>
  </div>
 
  <table>
