@@ -1,3 +1,10 @@
+@media print{
+ .NotPrint{
+     visibility: hidden;
+     position: absolute;
+ }
+}
+
 form{
     background-color: rgb(255, 255, 255);
     width: 700px;
@@ -93,6 +100,8 @@ td{
 }
 .imptxt{
     text-align: left;
+    display: inline-block;
+    min-width: 100px;
 }
 #TB-sol-div{
     float: left;
