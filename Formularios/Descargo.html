@@ -39,7 +39,7 @@
                         <label>Número de Empleado:</label>
                     </td>
                     <td id="empl_num" class="imptxt">
-                        <input type="number" name="empl_num">
+                        <input type="number" name="empl_num" required>
                     </td>
                 </tr>
                 <tr>
@@ -53,21 +53,34 @@
                         <label>Localidad:</label>
                     </td>
                     <td class="imptxt">
-                        <input type="text" name="locate">
+                        <datalist id="Localidad">
+                            <option value="SEDE"></option>
+                        </datalist>
+                        <input list="Localidad" type="text" name="locate">
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label>Departamento:</label>
+                        <datalist id="DEP">
+                            <option value="TECNOLOGIA"></option>
+                            <option value="RRHH"></option>
+                            <option value="CAJA GENERAL"></option>
+                            <option value="COMPRAS"></option>
+                            <option value="CUENTAS POR COBRAR"></option>
+                            <option value="CONTABILIDAD"></option>
+                            <option value="RELACIONES PUBLICAS"></option>
+                            <option value="TRANSPORTACION"></option>
+                        </datalist>
                     </td>
                     <td class="imptxt">
-                        <input type="text" name="dept">
+                        <input list="DEP" type="text" name="dept">
                     </td>
                     <td>
                         <label>Extensión:</label>
                     </td>
                     <td class="imptxt">
-                        <input type="text" name="ext">
+                        <input type="text" name="ext" maxlength="4">
                     </td>
                 </tr>
                 <tr>
