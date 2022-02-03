@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <div id="formdiv">  
+        <form action="conexion.php" method="post">
+            <div id="headform">
+                <div id="logo">
+                    <img id="LogIM" src="img/logo.png" alt="ADR"/>
+                </div>    
+                <div id=title>
+                    <h1 id="titleN">FORMULARIO DE SOLICITUD Y CAMBIO DE EQUIPOS COMUNICACION MOVIL</h1>
+                </div>
+            </div>
+                <div id="fecha">
+                    <label>Fecha:</label>
+                    <input type="date" name="fecha_form">
+                </div>
+            <div id="infoP">
+                <table>
+                    <tr>    
+                        <th class="TB-sol-th" colspan="4">
+                            INFORMACION DEL USUARIO
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Nombre del Usuario:</label>
+                        </td>
+                        <td class="imptxt">
+                            <input type="text" name="user_name" maxlength="20">
+                        </td>
+                        <td>
+                            <label>Número de Empleado:</label>
+                        </td>
+                        <td id="empl_num" class="imptxt">
+                            <input type="number" name="empl_num">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Carg/Puesto:</label>
+                        </td>
+                        <td class="imptxt">
+                            <input type="text" name="Cargo">
+                        </td>
+                        <td>
+                            <label>Localidad:</label>
+                        </td>
+                        <td class="imptxt">
+                            <input type="text" name="locate">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <label>Departamento:</label>
+                    </td>
+                        <td class="imptxt">
+                            <input type="text" name="dept">
+                        </td>
+                        <td>
+                            <label>Extensión:</label>
+                        </td>
+                        <td class="imptxt">
+                            <input type="text" name="ext">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Imputación:</label>
+                        </td>
+                        <td class="imptxt">
+                            <input type="text" name="imputacion">
+                        </td>
+                        <td>
+                            <label>No. de Flota:</label>
+                        </td>
+                        <td class="imptxt">
+                            <input type="tel" name="flota">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="TB-sol-div">
+                <table id="TB-sol">
+                    <tr>
+                        <th class="TB-sol-th" colspan="4">
+                            TIPO DE SOLICITUD
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="TB-sol-chk"><input type="checkbox" name="asig"></td>
+                        <td class="TB-sol-lbl"><label for="asig">Asignación</label></td>
+                        <td class="TB-sol-chk"><input type="checkbox" name="Prest"></td>
+                        <td class="TB-sol-lbl"><Label for="Prest">Préstamo</Label></td>
+                    </tr>
+                    <tr>
+                        <td class="TB-sol-chk"><input type="checkbox" name="rasig"></td>
+                        <td class="TB-sol-lbl"><label for="rasig">Descargo</label></td>
+                        <td class="TB-sol-chk"><input type="checkbox" name="Reparacion"></td>
+                        <td class="TB-sol-lbl"><Label for="Reparacion">Reparación</Label></td>
+                    </tr>
+                    <tr>
+                        <td class="TB-sol-chk"><input type="checkbox" name="cambio"></td>
+                        <td class="TB-sol-lbl"><label for="cambio">Cambio de equipo</label></td>
+                        <td class="TB-sol-chk"><input type="checkbox" name="simcard"></td>
+                        <td class="TB-sol-lbl"><Label for="simcard">Reposición Sim Card</Label></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="TB-equip-div">
+                <table id="TB-equip">
+                    <tr>
+                        <th class="TB-sol-th" colspan="4">
+                            TIPO Y MODELO DE EQUIPO
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="TB-sol-chk"><input type="checkbox" name="celular"></td>
+                        <td class="TB-sol-lbl"><label for="celular">Celular</label></td>
+                        <td class="TB-sol-chk"><input type="checkbox" name="lpt"></td>
+                        <td class="TB-sol-lbl"><Label for="lpt">Laptop</Label></td>
+                    </tr>
+                    <tr>
+                        <td class="TB-equip-lbl"><label for="imei">IMEI/Service Tag</label></td>
+                        <td class="TB-equip-input" colspan="3"><input type="text" name="imei"></td>
+                    </tr>
+                    <tr>
+                        <td class="TB-equip-lbl"><label for="model">Modelo</label></td>
+                        <td class="TB-equip-input" colspan="3"><input type="text" name="model"></td>
+                    </tr>
+                </table>
+            </div>
+
+        <div class="TB-sc-div">
+            <table id="TB-sc">
+                <tr>
+                    <th class="TB-sol-th" colspan="6">
+                        SELECCIONE LOS SERVICIOS DE ACCESO CELULAR SEGUN POLITICA
+                    </th>
+                </tr>
+                <tr>
+                    <td class="TB-sol-chk"><input type="checkbox" name="celular"></td>
+                    <td class="TB-sol-lbl"><label for="fa">Flota Abierta</label></td>
+                    <td class="TB-sol-chk"><input type="checkbox" name="celular"></td>
+                    <td class="TB-sol-lbl"><label for="fc">Flota Cerrada</label></td>
+                    <td class="TB-sol-chk"><input type="checkbox" name="celular"></td>
+                    <td class="TB-sol-lbl"><label for="lb">Lista Blanca</label></td>
+                </tr>
+            </table>
+        </div>
+ <table>
+    <tr>
+        <th class="TB-sol-th" colspan="6">
+            SELECCIONE LOS SERVICIOS DE ACCESO CELULAR SEGUN POLITICA
+        </th>
+    </tr>
+</table>
+
+<div id="TB-R-div">
+ <table id="TB-R">
+  <tr>
+    <th class="TB-R-th" colspan="4">
+        RANGO
+    </th>
+  </tr>
+
+  <table>
+
+        <th class="TB-lbl-R" colspan="2">
+           Supervisores y Subgerentes: Área técnica, pérdida, comercial, distribución, tecnología
+       </th>
+    
+    <!-- *********** --> 
+
+       <th class="TB-lbl-R" colspan="2" style="padding-bottom: 3.2px;">
+        Choferes y mensajeros            
+     </th>
+     
+     <!-- *********** --> 
+
+     <th class="TB-lbl-R" colspan="2">
+        Coordinadores (Mant. Edificio, Transportación, Almacén, Comercial, Seguridad Física e Industrial)                       
+    </th>
+    
+    <!-- *********** --> 
+
+    <th class="TB-lbl-R" colspan="2" style="padding-bottom: 13px;">
+        Arquitectos de Servicios Generales y coordinadores                    
+    </th>
+    
+    <!-- *********** --> 
+
+    <th class="TB-lbl-R" colspan="2">
+        Coordinadores de Comunicaciones Estrategia y Gestión Social	                         
+    </th>
+    
+<!-- *********** --> 
+
+    <th class="TB-lbl-R" colspan="2">
+        Gerentes Zonales y Subgerentes, Coordinadores de Comunicaciones Estrategia y Gestión Social.            
+                     
+    </th>
+    
+<!-- *********** --> 
+
+    <th class="TB-lbl-R" colspan="2" style="padding-bottom: 5px;">
+        Gerentes que se reportan a Directores       
+            
+    </th>
+
+
+    <th class="TB-lbl-R" colspan="2" style="padding-bottom: 7px;">
+        Directores        
+           <!-- <td class="TB-chk-R"><input type="checkbox" name="lpt"></td>     -->    
+    </th>
+    
+    <th class="TB-lbl-R" colspan="2" style="padding-bottom: 5px;">
+        Gerente General    
+    </th>
+
+ <!-- *********** -->   
+
+ </table>
+</div>
+
+<div id="TB-M-div">
+ <table id="TB-M">
+  <tr>
+    <th class="TB-M-th" colspan="4">
+        MINUTOS
+    </th>
+  </tr>
+
+   <table>
+    <tr>
+    <th class="TB-lbl-M" colspan="2" style="padding-bottom: 13.2px;">
+        <label><input type="checkbox">Llamadas entre flotas (CERRADA ILIMITADA)</label>
+    </th>
+
+    <th class="TB-lbl-M" colspan="2" style="padding-bottom: 1px;">
+        <label><input type="checkbox">Llamadas entre flotas (CERRADA ILIMITADA)</label>
+    </th>
+
+    <th class="TB-lbl-M" colspan="2" style="padding-bottom: 14px;">
+        <label><input type="checkbox">Llamadas entre flotas (CERRADA ILIMITADA)</label>
+    </th>
+
+    <th class="TB-lbl-M" colspan="2">
+      <label><input type="checkbox">300 (ABIERTA LIMITADA)</label>
+     </th>
+
+    <th class="TB-lbl-M" colspan="2" style="padding-bottom: 14px;">
+     <label><input type="checkbox">500 (ABIERTA LIMITADA)</label>
+    </th>
+
+    <th class="TB-lbl-M" colspan="2" style="padding-bottom: 14px;">
+     <label><input type="checkbox">500 (ABIERTA LIMITADA)</label>
+    </th>
+
+     <th class="TB-lbl-M" colspan="2" style="padding-bottom: 2px;">
+     <label><input type="checkbox">600 (ABIERTA LIMITADA)</label>
+     </th>
+
+    <th class="TB-lbl-M" colspan="2" style="padding-bottom: 4px;">
+     <label><input type="checkbox">Abierta Ilimitada Local)</label>
+    </th>
+
+    <th class="TB-lbl-M" colspan="2" style="padding-bottom: 2px;">
+      <label><input type="checkbox">Abierta Ilimitada/LDI/Roaming</label>
+    </th>
+
+        <!--********-->
+
+ </table>
+ </div> 
+ 
+ <div class="TB-as-div">
+    <table class="TB-as">
+        <tr>
+            <th class="TB-as-th" colspan="4">
+                ASIGNACION SERVICIO DE DATOS (SOLO SE APLICA AL PERSONAL INDICADO A CONTINUACION):
+            </th>
+        </tr>
+
+        <th class="TB-lbl-as" colspan="2">
+            <label>Niveles gerenciales que por sus funciones están más del 50% de su tiempo laboral fuera de la estación de trabajo y/o
+                 deben estar disponibles fuera de horario.<input type="checkbox"></label>
+          </th><tr>
+
+          <th class="TB-lbl-as" colspan="2">
+            <label>Personal que debe dar soporte a sistemas y plataformas tecnológicas.<input type="checkbox"></label>
+          </th><tr>
+
+            <th class="TB-lbl-as" colspan="2">
+                <label>Encargados de mantenimientos de redes eléctricas, proyectos de construcción, de redes y mantenimiento de edificios, 
+                    al personal de Distribución, Control de Perdidas y Comunicaciones Estratégicas que deben dar soporte a las redes eléctricas o 
+                    estar disponibles fuera de horario para atender casos de emergencias.<input type="checkbox"></label>
+              </th><tr>
+
+    </table>
+
+<div id="TB-js-div">
+    <table id="TB-js">
+        <tr>
+            <th class="TB-js-th" colspan="4">
+                JUSTIFIQUE LA RAZON DE DICHA SOLICITUD :
+            </th>
+        </tr>     
+
+            <td class="inpt_PI">
+                <input type="text" name="js" style="width: 99.3%;height: 30px;">
+            </td>
+    </table>    
+</div>    
+
+
+<table id="TB-txt">
+    <tr>
+        <th class="TB-txt-th" colspan="6">
+            NOTA: Los equipos pertenecen a ADR. 
+            Es responsabilidad del empleado velar por el cuidado del equipo. La empresa cubrirá hasta 1 (una)
+             reparación en un periodo de un año y la reposición del equipo por pérdida correrán por cuenta del 
+             empleado con el monto de reposición.
+        </th>
+    </tr>
+
+    <!-- name and signature -->
+
+
+<table class="TB-ns">
+   <tr>
+     <br>
+         <div class="ns1">
+         </div>
+
+        <div class="ns2">
+   </div>
+
+   <div class="ns3" >
+ </div>
+ <br>
+
+</table>
+
+ <!-- end name and signature -->
+
+ <div>
+     <label for="text" class="lbl-as">Nombre y firma <br> Director TIC</label>
+ </div>
+
+ <table>
+     <div>
+<th class="lbl-eq">ENTREGA DE EQUIPO (PARA USO DE TECNOLOGIA)</th>
+     </div>
+ </table>
+
+<table>
+    <div>
+        <td class="Fde1">
+            <label>FECHA DE ENTREGA:</label>
+            <input type="text" class="inpFde1"><br>
+        </td>
+    </div>
+</table>
+
+<div>
+    <input type="text" class="inpFde2">
+    <label  class="Nr">Nombre y No. Empleado <br> Recibido por</label>
+</div>
+<!--**************************-->
+</div>
+  </table>
+    </form>
+    </div>
+
+    </body>
+</html>
