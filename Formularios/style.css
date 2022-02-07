@@ -88,6 +88,18 @@ table{
     margin: 0 auto; 
     width: 100%;
 }
+.TB-Sig{
+    text-align: center;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 2px;
+    height: 100px;
+}
+.FORM1{
+    width: 600px;
+    border: none;
+}
 th{
     text-align: center;
     padding-bottom: 10px;
@@ -237,22 +249,6 @@ border-radius: 1px solid;
 }
 
 .ns1{
-    width:150px;    
-    border-top:1px solid rgb(0, 0, 0);
-    position: relative;
-    top:10px;
-    float:left;
-}
-
-.ns2{
-        width:150px;    
-        border-top:1px solid rgb(0, 0, 0);
-        position: relative;
-        top:10px;
-        float:right;
-}
-
-.ns3{
     margin:0px 25% 0px;
     width: 200px;    
     border-top:1px solid rgb(0, 0, 0);
@@ -293,6 +289,7 @@ border-bottom: 1px solid rgb(0, 0, 0) !important;
 
 .inpFde2{
     width: 300px;
+    height: 45px;
     border: 0px;
     outline: none;
     display: flex;

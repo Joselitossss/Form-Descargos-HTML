@@ -6,7 +6,6 @@
         <title></title>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
     <div id="formdiv">  
         <form action="conexion.php" method="post">
             <div id="headform">
@@ -33,21 +32,21 @@
                         <label class="Test">Nombre del Usuario:</label>
                     </td>
                     <td class="imptxt">
-                        <input type="text" name="user_name">
+                        <input type="text" name="user_name" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false">
                     </td>
                     <td>
                         <label>Número de Empleado:</label>
                     </td>
                     <td id="empl_num" class="imptxt">
-                        <input type="number" name="empl_num" required>
+                        <input type="text" name="empl_num" maxlength="4" autocomplete="off" required onkeypress="return valideKey(event);" >
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label>Carg/Puesto:</label>
+                        <label>Cargo/Puesto:</label>
                     </td>
                     <td class="imptxt">
-                        <input type="text" name="Cargo">
+                        <input type="text" name="Cargo" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false">
                     </td>
                     <td>
                         <label>Localidad:</label>
@@ -56,7 +55,7 @@
                         <datalist id="Localidad">
                             <option value="SEDE"></option>
                         </datalist>
-                        <input list="Localidad" type="text" name="locate">
+                        <input list="Localidad" type="text" name="locate" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false">
                     </td>
                 </tr>
                 <tr>
@@ -74,13 +73,13 @@
                         </datalist>
                     </td>
                     <td class="imptxt">
-                        <input list="DEP" type="text" name="dept">
+                        <input list="DEP" type="text" name="dept" autocomplete="off" onkeypress="return soloLetras(event)">
                     </td>
                     <td>
                         <label>Extensión:</label>
                     </td>
                     <td class="imptxt">
-                        <input type="text" name="ext" maxlength="4">
+                        <input type="text" name="ext" maxlength="4" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false">
                     </td>
                 </tr>
                 <tr>
@@ -88,13 +87,13 @@
                         <label>Imputación:</label>
                     </td>
                     <td class="imptxt">
-                        <input type="text" name="imputacion">
+                        <input type="text" name="imputacion" autocomplete="off" onkeypress="return soloLetras(event)">
                     </td>
                     <td>
                         <label>No. de Flota:</label>
                     </td>
                     <td class="imptxt">
-                        <input type="tel" name="flota">
+                        <input type="text" name="flota" maxlength="10" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false">
                     </td>
                 </tr>
             </table>
@@ -359,23 +358,17 @@
 
 
 <table class="TB-ns">
-   <tr>
      <br>
-         <div class="ns1">
-         </div>
-
-        <div class="ns2">
-   </div>
-
-   <div class="ns3" >
+   <div class="ns1" >
  </div>
  <br>
-
 </table>
 
  <!-- end name and signature -->
 
- <div>
+ 
+
+     <!-- dgrergerg3eg -->
      <label for="text" class="lbl-as">Director TIC</label>
  </div>
 
@@ -396,7 +389,7 @@
 
 <div>
     <input type="text" class="inpFde2">
-    <label  class="Nr">Nombre y No. Empleado <br> Recibido por</label>
+    <label  class="Nr"> <br> Recibido por</label>
 </div>
 <!--**************************-->
 </div>
@@ -411,5 +404,6 @@
 </div>
     </form>
     </div>
+    <script type="text/javascript" src="Function.js"></script>
     </body>
 </html>
