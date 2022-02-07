@@ -2,31 +2,29 @@
 
 <html lang="en">
     <head>
-        
         <meta charset="utf-8">
         <title></title>
         <link rel="stylesheet" href="style.css" media="screen">
-        
-
+        <script type="text/javascript" src="Function.js"></script>
     </head>
 
     <body>
 
-    <div id="formdiv">  
-        <form action="conexion.php" method="post">
-            <div id="headform">
+        <div id="formdiv">  
+            <form action="conexion.php" method="post">
+                <div id="headform">
                 <div id="logo">
                     <img id="LogIM" src="img/logo.png" alt="ADR"/>
                 </div>    
                 <div id=title>
                     <h1 id="titleN">FORMULARIO DE SOLICITUD Y CAMBIO DE EQUIPOS COMUNICACION MOVIL</h1>
                 </div>
-            </div>
-        <div id="fecha">
+                </div>
+                <div id="fecha">
             <label>Fecha:</label>
             <input type="date" name="fecha_form">
-        </div>
-        <div id="infoP">
+                </div>
+                <div id="infoP">
             <table>
                 <tr><th class="TB-sol-th" colspan="4">INFORMACION DEL USUARIO</th></tr>
                 <tr>
@@ -104,8 +102,8 @@
                     <td class="imptxt"><input type="text" name="flota" maxlength="10" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false"></td>
                 </tr>
             </table>
-        </div>
-        <div id="TB-sol-div">
+                </div>
+                <div id="TB-sol-div">
             <table id="TB-sol">
                 <tr>
                     <th class="TB-sol-th" colspan="4">TIPO DE SOLICITUD</th>
@@ -129,8 +127,8 @@
                     <td class="TB-sol-lbl"><Label for="simcard">Reposición Sim Card</Label></td>
                 </tr>
             </table>
-        </div>
-        <div id="TB-equip-div">
+                </div>
+                <div id="TB-equip-div">
             <table id="TB-equip">
                 <tr>
                     <th class="TB-sol-th" colspan="4">TIPO Y MODELO DE EQUIPO</th>
@@ -150,9 +148,9 @@
                     <td class="TB-equip-input" colspan="3"><input type="text" name="model"></td>
                 </tr>
             </table>
-        </div>
+                </div>
 
-        <div class="TB-sc-div">
+                <div class="TB-sc-div">
             <table id="TB-sc">
                 <tr>
                     <th class="TB-sol-th" colspan="6">SELECCIONE LOS SERVICIOS DE ACCESO CELULAR SEGUN POLITICA</th>
@@ -166,14 +164,14 @@
                     <td class="TB-sol-lbl"><label for="lb">Lista Blanca</label></td>
                 </tr>
             </table>
-        </div>
-        <table>
+                </div>
+                <table>
             <tr>
                 <th class="TB-sol-th" colspan="6">SELECCIONE LOS SERVICIOS DE ACCESO CELULAR SEGUN POLITICA</th>
             </tr>
-        </table>
+                </table>
 
-        <div id="TB-R-div">
+                <div id="TB-R-div">
  <table id="TB-R">
   <tr>
     <th class="TB-R-th" colspan="4">RANGO</th>
@@ -248,9 +246,9 @@
  <!-- *********** -->   
 
     </table>
-        </div>
+                </div>
 
-<div id="TB-M-div">
+                <div id="TB-M-div">
  <table id="TB-M">
   <tr>
     <th class="TB-M-th" colspan="4">MINUTOS</th>
@@ -297,9 +295,9 @@
         <!--********-->
 
     </table>
-</div> 
+                </div> 
  
-<div class="TB-as-div">
+                <div class="TB-as-div">
     <table class="TB-as">
         <tr>
             <th class="TB-as-th" colspan="4">ASIGNACION SERVICIO DE DATOS (SOLO SE APLICA AL PERSONAL INDICADO A CONTINUACION):</th>
@@ -359,39 +357,38 @@
 
      <!-- dgrergerg3eg -->
      <label for="text" class="lbl-as">Director TIC</label>
-</div>
+                </div>
 
- <table>
+                <table>
      <div>
 <th class="lbl-eq">ENTREGA DE EQUIPO (PARA USO DE TECNOLOGIA)</th>
      </div>
- </table>
+                </table>
 
-<table>
+                <table>
     <div>
         <td class="Fde1">
             <label>FECHA DE ENTREGA:</label>
             <input type="text" class="inpFde1"><br>
         </td>
     </div>
-</table>
+                </table>
 
-<div>
+                <div>
     <input type="text" class="inpFde2">
     <label  class="Nr"> <br> Recibido por</label>
-</div>
-<!--**************************-->
-
-  <!--**************************-->
-  <br><br>
-<div id="buttons.NotPrint" class="NotPrint">
+                </div>
+                    <br><br>
+                <div id="buttons.NotPrint" class="NotPrint">
   <input type="reset" value="Reset" />
   <input type="submit" value="event" /> <br>
   <br>
   <input type="button" value="Importar" />
-</div>
-    </form>
-    </div>
-    <script type="text/javascript" src="Function.js"></script>
+                </div>
+            
+            
+            
+            </form>
+        </div>
     </body>
 </html>
