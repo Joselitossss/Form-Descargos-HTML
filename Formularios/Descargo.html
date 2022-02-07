@@ -5,9 +5,13 @@
         
         <meta charset="utf-8">
         <title></title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css" media="screen">
+        
 
     </head>
+
+    <body>
+
     <div id="formdiv">  
         <form action="conexion.php" method="post">
             <div id="headform">
@@ -24,38 +28,53 @@
         </div>
         <div id="infoP">
             <table>
-                <tr>    
-                    <th class="TB-sol-th" colspan="4">
-                        INFORMACION DEL USUARIO
-                    </th>
+                <tr><th class="TB-sol-th" colspan="4">INFORMACION DEL USUARIO</th></tr>
+                <tr>
+                    <td><label class="Test">Nombre del Usuario:</label></td>
+                    <td class="imptxt"><input type="text" name="user_name" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false" maxlength="21"></td>
+                    <td><label>Número de Empleado:</label></td>
+                    <td id="empl_num" class="imptxt"><input type="text" name="empl_num" maxlength="4" autocomplete="off" required onkeypress="return valideKey(event);" ></td>
                 </tr>
                 <tr>
-                    <td>
-                        <label class="Test">Nombre del Usuario:</label>
-                    </td>
-                    <td class="imptxt">
-                        <input type="text" name="user_name" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false">
-                    </td>
-                    <td>
-                        <label>Número de Empleado:</label>
-                    </td>
-                    <td id="empl_num" class="imptxt">
-                        <input type="text" name="empl_num" maxlength="4" autocomplete="off" required onkeypress="return valideKey(event);" >
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Cargo/Puesto:</label>
-                    </td>
-                    <td class="imptxt">
-                        <input type="text" name="Cargo" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false">
-                    </td>
-                    <td>
-                        <label>Localidad:</label>
-                    </td>
+                    <td><label>Cargo/Puesto:</label></td>
+                    <td class="imptxt"><input type="text" name="Cargo" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false"></td>
+                    <td><label>Localidad:</label></td>
                     <td class="imptxt">
                         <datalist id="Localidad">
                             <option value="SEDE"></option>
+                            <option value="AZUA"></option>
+                            <option value="BANI"></option>
+                            <option value="BONAO"></option>
+                            <option value="CONSTANZA"></option>
+                            <option value="COTUI"></option>
+                            <option value="DAJABON"></option>
+                            <option value="EL SEIBO"></option>
+                            <option value="GUERRA"></option>
+                            <option value="HAINA"></option>
+                            <option value="HATO MAYOR"></option>
+                            <option value="HIGUEY"></option>
+                            <option value="JARABACOA"></option>
+                            <option value="LA ROMANA"></option>
+                            <option value="LA VEGA"></option>
+                            <option value="LAS MATAS DE FARFAN"></option>
+                            <option value="LUPERON"></option>
+                            <option value="MAIMON"></option>
+                            <option value="MONTE CRISTI"></option>
+                            <option value="NAGUA"></option>
+                            <option value="PUERTO PLATA"></option>
+                            <option value="SALCEDO"></option>
+                            <option value="SAN CRISTOBAL"></option>
+                            <option value="SAN FRANCISCO DE MACORIS"></option>
+                            <option value="SAN JOSE DE OCOA"></option>
+                            <option value="SAN JUAN DE LA MAGUANA"></option>
+                            <option value="SAN PEDRO DE MACORIS"></option>
+                            <option value="SANCHEZ"></option>
+                            <option value="SANTIAGO DE LOS CABALLEROS"></option>
+                            <option value="SANTO DOMINGO ESTE"></option>
+                            <option value="SANTO DOMINGO OESTE"></option>
+                            <option value="SOSUA"></option>
+                            <option value="BARAHONA"></option>
+
                         </datalist>
                         <input list="Localidad" type="text" name="locate" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false">
                     </td>
@@ -74,38 +93,22 @@
                             <option value="TRANSPORTACION"></option>
                         </datalist>
                     </td>
-                    <td class="imptxt">
-                        <input list="DEP" type="text" name="dept" autocomplete="off" onkeypress="return soloLetras(event)">
-                    </td>
-                    <td>
-                        <label>Extensión:</label>
-                    </td>
-                    <td class="imptxt">
-                        <input type="text" name="ext" maxlength="4" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false">
-                    </td>
+                    <td class="imptxt"><input list="DEP" type="text" name="dept" autocomplete="off" onkeypress="return soloLetras(event)"></td>
+                    <td><label>Extensión:</label></td>
+                    <td class="imptxt"><input type="text" name="ext" maxlength="4" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false"></td>
                 </tr>
                 <tr>
-                    <td>
-                        <label>Imputación:</label>
-                    </td>
-                    <td class="imptxt">
-                        <input type="text" name="imputacion" autocomplete="off" onkeypress="return soloLetras(event)">
-                    </td>
-                    <td>
-                        <label>No. de Flota:</label>
-                    </td>
-                    <td class="imptxt">
-                        <input type="text" name="flota" maxlength="10" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false">
-                    </td>
+                    <td><label>Imputación:</label></td>
+                    <td class="imptxt"><input type="text" name="imputacion" autocomplete="off" onkeypress="return soloLetras(event)"></td>
+                    <td><label>No. de Flota:</label></td>
+                    <td class="imptxt"><input type="text" name="flota" maxlength="10" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false"></td>
                 </tr>
             </table>
         </div>
         <div id="TB-sol-div">
             <table id="TB-sol">
                 <tr>
-                    <th class="TB-sol-th" colspan="4">
-                        TIPO DE SOLICITUD
-                    </th>
+                    <th class="TB-sol-th" colspan="4">TIPO DE SOLICITUD</th>
                 </tr>
                 <tr>
                     <td class="TB-sol-chk"><input type="checkbox" name="asig"></td>
@@ -130,9 +133,7 @@
         <div id="TB-equip-div">
             <table id="TB-equip">
                 <tr>
-                    <th class="TB-sol-th" colspan="4">
-                        TIPO Y MODELO DE EQUIPO
-                    </th>
+                    <th class="TB-sol-th" colspan="4">TIPO Y MODELO DE EQUIPO</th>
                 </tr>
                 <tr>
                     <td class="TB-sol-chk"><input type="checkbox" name="celular"></td>
@@ -154,9 +155,7 @@
         <div class="TB-sc-div">
             <table id="TB-sc">
                 <tr>
-                    <th class="TB-sol-th" colspan="6">
-                        SELECCIONE LOS SERVICIOS DE ACCESO CELULAR SEGUN POLITICA
-                    </th>
+                    <th class="TB-sol-th" colspan="6">SELECCIONE LOS SERVICIOS DE ACCESO CELULAR SEGUN POLITICA</th>
                 </tr>
                 <tr>
                     <td class="TB-sol-chk"><input type="checkbox" name="celular"></td>
@@ -168,35 +167,31 @@
                 </tr>
             </table>
         </div>
- <table>
-    <tr>
-        <th class="TB-sol-th" colspan="6">
-            SELECCIONE LOS SERVICIOS DE ACCESO CELULAR SEGUN POLITICA
-        </th>
-    </tr>
-</table>
+        <table>
+            <tr>
+                <th class="TB-sol-th" colspan="6">SELECCIONE LOS SERVICIOS DE ACCESO CELULAR SEGUN POLITICA</th>
+            </tr>
+        </table>
 
-<div id="TB-R-div">
+        <div id="TB-R-div">
  <table id="TB-R">
   <tr>
-    <th class="TB-R-th" colspan="4">
-        RANGO
-    </th>
+    <th class="TB-R-th" colspan="4">RANGO</th>
   </tr>
 
-  <table>
+    <table>
 
-    <select name="AccesMovil" class="ACM">
-        <option value="1">Supervisores y Subgerentes: Área técnica, pérdida, comercial, distribución, tecnología</option> 
-        <option value="2">Choferes y mensajeros</option> 
-        <option value="3">Coordinadores (Mant. Edificio, Transportación, Almacén, Comercial, Seguridad Física e Industrial)</option>
-        <option value="4">Arquitectos de Servicios Generales y coordinadores</option> 
-        <option value="5">Coordinadores de Comunicaciones Estrategia y Gestión Social</option> 
-        <option value="6">Gerentes Zonales y Subgerentes, Coordinadores de Comunicaciones Estrategia y Gestión Social</option> 
-        <option value="7">Gerentes que se reportan a Directores</option>
-        <option value="8">Directores</option>
-        <option value="9">Gerente General</option>
-     </select>
+        <select name="AccesMovil" class="ACM">
+            <option value="1">Supervisores y Subgerentes: Área técnica, pérdida, comercial, distribución, tecnología</option> 
+            <option value="2">Choferes y mensajeros</option> 
+            <option value="3">Coordinadores (Mant. Edificio, Transportación, Almacén, Comercial, Seguridad Física e Industrial)</option>
+            <option value="4">Arquitectos de Servicios Generales y coordinadores</option> 
+            <option value="5">Coordinadores de Comunicaciones Estrategia y Gestión Social</option> 
+            <option value="6">Gerentes Zonales y Subgerentes, Coordinadores de Comunicaciones Estrategia y Gestión Social</option> 
+            <option value="7">Gerentes que se reportan a Directores</option>
+            <option value="8">Directores</option>
+            <option value="9">Gerente General</option>
+        </select>
 
   <!--  <th class="TB-lbl-R" colspan="2">
            Supervisores y Subgerentes: Área técnica, pérdida, comercial, distribución, tecnología
@@ -252,19 +247,17 @@
 
  <!-- *********** -->   
 
- </table>
-</div>
+    </table>
+        </div>
 
 <div id="TB-M-div">
  <table id="TB-M">
   <tr>
-    <th class="TB-M-th" colspan="4">
-        MINUTOS
-    </th>
+    <th class="TB-M-th" colspan="4">MINUTOS</th>
   </tr>
 
    <table>
-    <tr>
+
     <th class="TB-lbl-M" colspan="2" style="padding-bottom: 13.2px;">
         <label><input type="checkbox">Llamadas entre flotas (CERRADA ILIMITADA)</label>
     </th>
@@ -279,19 +272,19 @@
 
     <th class="TB-lbl-M" colspan="2">
       <label><input type="checkbox">300 (ABIERTA LIMITADA)</label>
-     </th>
-
-    <th class="TB-lbl-M" colspan="2" style="padding-bottom: 14px;">
-     <label><input type="checkbox">500 (ABIERTA LIMITADA)</label>
     </th>
 
     <th class="TB-lbl-M" colspan="2" style="padding-bottom: 14px;">
      <label><input type="checkbox">500 (ABIERTA LIMITADA)</label>
     </th>
 
-     <th class="TB-lbl-M" colspan="2" style="padding-bottom: 2px;">
+    <th class="TB-lbl-M" colspan="2" style="padding-bottom: 14px;">
+     <label><input type="checkbox">500 (ABIERTA LIMITADA)</label>
+    </th>
+
+    <th class="TB-lbl-M" colspan="2" style="padding-bottom: 2px;">
      <label><input type="checkbox">600 (ABIERTA LIMITADA)</label>
-     </th>
+    </th>
 
     <th class="TB-lbl-M" colspan="2" style="padding-bottom: 4px;">
      <label><input type="checkbox">Abierta Ilimitada Local)</label>
@@ -303,45 +296,39 @@
 
         <!--********-->
 
- </table>
- </div> 
+    </table>
+</div> 
  
- <div class="TB-as-div">
+<div class="TB-as-div">
     <table class="TB-as">
         <tr>
-            <th class="TB-as-th" colspan="4">
-                ASIGNACION SERVICIO DE DATOS (SOLO SE APLICA AL PERSONAL INDICADO A CONTINUACION):
-            </th>
+            <th class="TB-as-th" colspan="4">ASIGNACION SERVICIO DE DATOS (SOLO SE APLICA AL PERSONAL INDICADO A CONTINUACION):</th>
         </tr>
 
         <th class="TB-lbl-as" colspan="2">
             <label>Niveles gerenciales que por sus funciones están más del 50% de su tiempo laboral fuera de la estación de trabajo y/o
                  deben estar disponibles fuera de horario.<input type="checkbox"></label>
-          </th><tr>
-
-          <th class="TB-lbl-as" colspan="2">
-            <label>Personal que debe dar soporte a sistemas y plataformas tecnológicas.<input type="checkbox"></label>
-          </th><tr>
+        </th>
+        <tr>
+          <th class="TB-lbl-as" colspan="2"><label>Personal que debe dar soporte a sistemas y plataformas tecnológicas.<input type="checkbox"></label></th>
+        </tr>
 
             <th class="TB-lbl-as" colspan="2">
                 <label>Encargados de mantenimientos de redes eléctricas, proyectos de construcción, de redes y mantenimiento de edificios, 
                     al personal de Distribución, Control de Perdidas y Comunicaciones Estratégicas que deben dar soporte a las redes eléctricas o 
                     estar disponibles fuera de horario para atender casos de emergencias.<input type="checkbox"></label>
-              </th><tr>
+            </th>
 
     </table>
 
 <div id="TB-js-div">
     <table id="TB-js">
         <tr>
-            <th class="TB-js-th" colspan="4">
-                JUSTIFIQUE LA RAZON DE DICHA SOLICITUD :
-            </th>
-        </tr>     
-
-            <td class="inpt_PI">
-                <input type="text" name="js" style="width: 99.3%;height: 30px;">
-            </td>
+            <th class="TB-js-th" colspan="4">JUSTIFIQUE LA RAZON DE DICHA SOLICITUD :</th>
+        </tr>
+        <tr>     
+            <td class="inpt_PI"><input type="text" name="js" style="width: 99.3%;height: 30px;"></td>
+        </tr>
     </table>    
 </div>    
 
@@ -357,13 +344,13 @@
     </tr>
 
     <!-- name and signature -->
-
+</table>
 
 <table class="TB-ns">
-     <br>
-   <div class="ns1" >
- </div>
- <br>
+    <br>
+    <div class="ns1" >
+    </div>
+    <br>
 </table>
 
  <!-- end name and signature -->
@@ -372,7 +359,7 @@
 
      <!-- dgrergerg3eg -->
      <label for="text" class="lbl-as">Director TIC</label>
- </div>
+</div>
 
  <table>
      <div>
@@ -394,13 +381,12 @@
     <label  class="Nr"> <br> Recibido por</label>
 </div>
 <!--**************************-->
-</div>
-  </table> 
+
   <!--**************************-->
   <br><br>
-<div class="NotPrint">
+<div id="buttons.NotPrint" class="NotPrint">
   <input type="reset" value="Reset" />
-  <input type="submit" value="Enviar" /> <br>
+  <input type="submit" value="event" /> <br>
   <br>
   <input type="button" value="Importar" />
 </div>

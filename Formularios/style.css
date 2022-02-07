@@ -316,4 +316,8 @@ font-weight: bold;
 padding-left: 15px;
 }
 
+#buttons.NotPrint{
+margin: auto;
+display: table;
 
+}
