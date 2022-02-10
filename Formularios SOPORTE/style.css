@@ -112,9 +112,7 @@ td{
 }
 .imptxt{
     text-align: left;
-    display: inline-block;
     min-width: 100px;
-    
 }
 #TB-sol-div{
     float: left;
@@ -124,11 +122,14 @@ td{
 #TB-sol{
     float: left;
 }
-#TB-sol-chk{
-    text-align: right;
+.TB-sol-rad{
+    text-align: left;
+}
+.TB-sol-chk{
+    text-align: center;
 }
 .TB-sol-lbl{
-    text-align: left;
+    text-align: center;
 }
 .TB-sol-th{
     padding: 0;
@@ -152,9 +153,7 @@ td{
 }
 
 #TB-R-div{
-    float: left;
-    padding: 0px, 3px, 0px, 2px;
-    width: 45%;
+    width: 100%;
 }
 
 #TB-R{
@@ -165,7 +164,7 @@ td{
 .TB-R-th{
     padding: 0;
     font-size: small;
-    width: 100%;
+    width: auto;
 }
 
 #TB-M-div{
@@ -183,33 +182,23 @@ td{
     padding-bottom: 0;
     margin: 0%;
     font-size: small;
-    width: 100%;
+    padding-top: 0;
 }
 
 .ACM{
-    width: 396px;
+    width: 95%;
     flex-wrap: nowrap;
 }
-/* The properties that affect the label and th */
-/*.TB-lbl-R{
-    display: flex;
-    justify-content: center;
-    float: left;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    padding-right: 81.9px;
-    margin: 0%;
-    font-size: small;
-    width: 100%;
-}*/
+#TB-ACM{
+    width: 65%;
+    text-align: center;
+    vertical-align: top;
+}
 
 .TB-lbl-M{
     display: flex;
-    float: left;
-    padding-top: 1px;
-    margin: 0%;
     font-size: small;
-    width: 100%;
+    padding: 0;
 }
 
 .TB-as-th{
@@ -220,8 +209,21 @@ td{
 }
 
 .TB-lbl-as{
-    padding: 0px;
-   display:flex;
+text-align: left;
+margin: 0;
+padding: 0;
+padding-right: 5%;
+border: none;
+text-align: justify;
+}
+
+.TB-inp-as{
+width: 5%;
+margin: 0;
+padding: 0;
+border: none;
+text-align: right;
+vertical-align: top;
 }
 
 .TB-js-div{
@@ -319,5 +321,26 @@ padding-left: 15px;
 #buttons.NotPrint{
 margin: auto;
 display: table;
-
 }
+
+.span-text {
+    display: block;
+    width: inherit;
+    overflow: hidden;
+    resize: vertical;
+    min-height: 40px;
+    line-height: 20px;
+    border: 1px solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: justify;
+    font-size: small;
+  }
+  
+  .span-text[contenteditable]:empty::before {
+    content: "Escriba aquí";
+    color: darkgray;
+    text-align: justify;
+  }
