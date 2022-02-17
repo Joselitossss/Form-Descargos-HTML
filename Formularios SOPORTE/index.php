@@ -4,22 +4,22 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-        <link rel="stylesheet" href="style.css" media="screen">
+        <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="Function.js"></script>
     </head>
 
     <body>
         <div id="formdiv">  
-            <form action="conexion.php" method="post">
+            <form class="resize" action="conexion.php" method="post">
 
 
-
+            
                 <div id="headform">
                     <div id="logo">
                         <img id="LogIM" src="img/logo.png" alt="ADR"/>
                     </div>    
                     <div id=title>
-                        <h1 id="titleN">FORMULARIO DE SOLICITUD Y CAMBIO DE EQUIPOS COMUNICACION MOVIL</h1>
+                        <h1 id="titleN">FORMULARIOS DE SOLICITUD Y CAMBIO DE EQUIPOS COMUNICACION MOVIL</h1>
                     </div>
                 </div>
                 <div id="fecha">
@@ -111,17 +111,17 @@
                             <th class="TB-sol-th" colspan="4">TIPO DE SOLICITUD</th>
                         </tr>
                         <tr>
-                            <td class="TB-sol-rad"><label for="asig"><input type="radio" name="asig" value="Asignacion">Asignación</label></td>
-                            <td class="TB-sol-rad"><Label for="asig"><input type="radio" name="asig" value="Prestamo">Préstamo</Label></td>
+                            <td class="TB-sol-rad"><label><input type="radio" name="asig" value="Asignacion">Asignación</label></td>
+                            <td class="TB-sol-rad"><label><input type="radio" name="asig" value="Prestamo">Préstamo</label></td>
                             
                         </tr>
                         <tr>
-                            <td class="TB-sol-rad"><label for="asig"><input type="radio" name="asig" value="Descargo">Descargo</label></td>
-                            <td class="TB-sol-rad"><Label for="asig"><input type="radio" name="asig" value="Reparacion">Reparación</Label></td>
+                            <td class="TB-sol-rad"><label><input type="radio" name="asig" value="Descargo">Descargo</label></td>
+                            <td class="TB-sol-rad"><label><input type="radio" name="asig" value="Reparacion">Reparación</label></td>
                         </tr>
                         <tr>
-                            <td class="TB-sol-rad"><label for="asig"><input type="radio" name="asig" value="Cambio_equipo">Cambio de equipo</label></td>
-                            <td class="TB-sol-rad"><Label for="asig"><input type="radio" name="asig" value="Reposicio_Sim">Reposición Sim Card</Label></td>
+                            <td class="TB-sol-rad"><label><input type="radio" name="asig" value="Cambio_equipo">Cambio de equipo</label></td>
+                            <td class="TB-sol-rad"><label><input type="radio" name="asig" value="Reposicio_Sim">Reposición Sim Card</label></td>
                         </tr>
                     </table>
                 </div>
@@ -150,9 +150,9 @@
                             <th class="TB-sol-th" colspan="6">SELECCIONE LOS SERVICIOS DE ACCESO CELULAR SEGUN POLITICA</th>
                         </tr>
                         <tr>
-                            <td class="TB-sol-lbl"><label for="celular"><input type="radio" name="celular">Flota Abierta</label></td>
-                            <td class="TB-sol-lbl"><label for="celular"><input type="radio" name="celular">Flota Cerrada</label></td>
-                            <td class="TB-sol-lbl"><label for="celular"><input type="radio" name="celular">Lista Blanca</label></td>
+                            <td class="TB-sol-lbl"><label><input type="radio" name="celular">Flota Abierta</label></td>
+                            <td class="TB-sol-lbl"><label><input type="radio" name="celular">Flota Cerrada</label></td>
+                            <td class="TB-sol-lbl"><label><input type="radio" name="celular">Lista Blanca</label></td>
                         </tr>
                     </table>
                 </div>
@@ -198,16 +198,13 @@
                             <th class="TB-as-th" colspan="2">ASIGNACION SERVICIO DE DATOS (SOLO SE APLICA AL PERSONAL INDICADO A CONTINUACION):</th>
                         </tr>
                         <tr>
-                            <th class="TB-inp-as"><input type="radio" name="Servicios_de_datos" value="Nivel_gerencia"></th>
-                            <th class="TB-lbl-as"><label>Niveles gerenciales que por sus funciones están más del 50% de su tiempo laboral fuera de la estación de trabajo y/o deben estar disponibles fuera de horario.</label></th>
+                            <th class="TB-lbl-as"><label><input type="radio" name="Servicios_de_datos" value="Nivel_gerencia">Niveles gerenciales que por sus funciones están más del 50% de su tiempo laboral fuera de la estación de trabajo y/o deben estar disponibles fuera de horario.</label></th>
                         </tr>
                         <tr>
-                            <th class="TB-inp-as"><input type="radio" name="Servicios_de_datos" value="Nivel_soporte"></th>
-                            <th class="TB-lbl-as"><label>Personal que debe dar soporte a sistemas y plataformas tecnológicas.</label></th>
+                            <th class="TB-lbl-as"><label><input type="radio" name="Servicios_de_datos" value="Nivel_soporte">Personal que debe dar soporte a sistemas y plataformas tecnológicas.</label></th>
                         </tr>
                         <tr>
-                            <th class="TB-inp-as"><input type="radio" name="Servicios_de_datos" value="Nivel_Encargado"></th>
-                            <th class="TB-lbl-as"><label>Encargados de mantenimientos de redes eléctricas, proyectos de construcción, de redes y mantenimiento de edificios, al personal de Distribución, Control de Perdidas y Comunicaciones Estratégicas que deben dar soporte a las redes eléctricas o estar disponibles fuera de horario para atender casos de emergencias.</label></th>
+                            <th class="TB-lbl-as"><label><input type="radio" name="Servicios_de_datos" value="Nivel_Encargado">Encargados de mantenimientos de redes eléctricas, proyectos de construcción, de redes y mantenimiento de edificios, al personal de Distribución, Control de Perdidas y Comunicaciones Estratégicas que deben dar soporte a las redes eléctricas o estar disponibles fuera de horario para atender casos de emergencias.</label></th>
                         </tr>
                     </table>
                 </div>
@@ -263,7 +260,7 @@
                     <br><br>
                 <div id="buttons.NotPrint" class="NotPrint">
                     <input type="reset" value="Reset" />
-                    <input type="submit" value="event" /> <br>
+                    <input type="submit" value="Enviar" /> <br>
                     <br>
                     <input type="button" value="Importar" />
                 </div>
