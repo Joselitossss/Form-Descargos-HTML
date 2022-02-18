@@ -9,8 +9,11 @@
     </head>
 
     <body>
+<?php
+include ("conexion.php");
+?>
         <div id="formdiv">  
-            <form class="resize" action="conexion.php" method="post">
+            <form action="save.php" method="post">
 
 
             
@@ -19,7 +22,7 @@
                         <img id="LogIM" src="img/logo.png" alt="ADR"/>
                     </div>    
                     <div id=title>
-                        <h1 id="titleN">FORMULARIOS DE SOLICITUD Y CAMBIO DE EQUIPOS COMUNICACION MOVIL</h1>
+                        <h1 id="titleN">FORMULARIO DE SOLICITUD Y CAMBIO DE EQUIPOS COMUNICACION MOVIL</h1>
                     </div>
                 </div>
                 <div id="fecha">
@@ -32,9 +35,9 @@
                         </tr>
                         <tr>
                             <td><label class="Test">Nombre del Usuario:</label></td>
-                            <td class="imptxt"><input type="text" name="user_name" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false" maxlength="21"></td>
+                            <td class="imptxt"><input type="text" name="Nombre_Empleado" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false" maxlength="21"></td>
                             <td><label>Número de Empleado:</label></td>
-                            <td id="empl_num" class="imptxt"><input type="text" name="empl_num" maxlength="4" autocomplete="off" required onkeypress="return valideKey(event);" ></td>
+                            <td id="Numero_Empleado" class="imptxt"><input type="text" name="Numero_Empleado" maxlength="4" autocomplete="off" required onkeypress="return valideKey(event);" ></td>
                         </tr>
                         <tr>
                             <td><label>Cargo/Puesto:</label></td>
@@ -76,7 +79,7 @@
                                     <option value="SOSUA"></option>
                                     <option value="BARAHONA"></option>
                                 </datalist>
-                                <input list="Localidad" type="text" name="locate" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false">
+                                <input list="Localidad" type="text" name="Localidad" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false">
                             </td>
                         </tr>
                         <tr>
@@ -93,15 +96,14 @@
                                     <option value="TRANSPORTACION"></option>
                                 </datalist>
                             </td>
-                            <td class="imptxt"><input list="DEP" type="text" name="dept" autocomplete="off" onkeypress="return soloLetras(event)"></td>
+                            <td class="imptxt"><input list="DEP" type="text" name="Departamento" autocomplete="off" onkeypress="return soloLetras(event)"></td>
                             <td><label>Extensión:</label></td>
-                            <td class="imptxt"><input type="text" name="ext" maxlength="4" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false"></td>
+                            <td class="imptxt"><input type="text" name="Extension" maxlength="4" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false"></td>
                         </tr>
                         <tr>
-                            <td><label>Imputación:</label></td>
-                            <td class="imptxt"><input type="text" name="imputacion" autocomplete="off" onkeypress="return soloLetras(event)"></td>
+                            
                             <td><label>No. de Flota:</label></td>
-                            <td class="imptxt"><input type="text" name="flota" maxlength="10" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false"></td>
+                            <td class="imptxt"><input type="text" name="No_Flota" maxlength="10" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false"></td>
                         </tr>
                     </table>
                 </div>
@@ -233,11 +235,7 @@
                             <br>
                     </table>
 
-                        <!-- end name and signature -->
-
- 
-
-                        <!-- dgrergerg3eg -->
+                        
                         <label for="text" class="lbl-as">Director TIC</label>
                 </div>
                 <table>

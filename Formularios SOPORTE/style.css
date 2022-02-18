@@ -1,12 +1,10 @@
-@media print{
+/*@media print{
  .NotPrint{
      visibility: hidden;
      position: absolute;
  }
+}*/
 
-}
-
-/* Apariencia cuando esta en pantalla*/
 form{
     background-color: rgb(255, 255, 255);
     width: 700px;
