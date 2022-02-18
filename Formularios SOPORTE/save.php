@@ -14,13 +14,13 @@ $Localidad=$_POST ['Localidad'];
 $Extension=$_POST ['Extension'];
 $No_Flota=$_POST ['No_Flota'];
 
-if (empty($Numero_Empleado)){$Numero_Empleado="0";}
-if (empty($Nombre_Empleado)){$Nombre_Empleado="0";}
-if (empty($Cargo)){$Cargo="0";}
-if (empty($Departamento)){$Departamento="0";}
-if (empty($Localidad)){$Localidad="0";}
-if (empty($Extension)){$Extension="0";}
-if (empty($No_Flota)){$No_Flota="0";}
+if (empty($Numero_Empleado)){$Numero_Empleado= NULL;}
+if (empty($Nombre_Empleado)){$Nombre_Empleado= NULL;}
+if (empty($Cargo)){$Cargo= NULL;}
+if (empty($Departamento)){$Departamento= NULL;}
+if (empty($Localidad)){$Localidad= NULL;}
+if (empty($Extension)){$Extension=NULL;}
+if (empty($No_Flota)){$No_Flota=NULL;}
 
     //Tipo de solicitud
 
