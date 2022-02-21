@@ -114,6 +114,15 @@ td{
     text-align: left;
     min-width: 100px;
 }
+
+select {
+    width: 150px;
+    overflow: hidden;
+    white-space: pre;
+    text-overflow: ellipsis;
+    -webkit-appearance: none;
+  }
+
 #TB-sol-div{
     float: left;
     padding-top: 5px;

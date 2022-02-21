@@ -9,14 +9,12 @@
     </head>
 
     <body>
-<?php
-include ("conexion.php");
-?>
+        <?php
+            include ("conexion.php");
+            $Q=mysqli_query($conn,"SELECT name from glpidb.glpi_locations" )
+        ?>
         <div id="formdiv">  
             <form action="save.php" method="post">
-
-
-            
                 <div id="headform">
                     <div id="logo">
                         <img id="LogIM" src="img/logo.png" alt="ADR"/>
@@ -26,7 +24,7 @@ include ("conexion.php");
                     </div>
                 </div>
                 <div id="fecha">
-                    <label>Fecha: <input type="date" name="fecha_form" value="<?php echo date("Y-m-d");?>"></label>
+                    <label>Fecha: <input type="date" name="fecha_form" value="<?php echo date("Y-m-d");?>" require></label>
                 </div>
                 <div id="infoP">
                     <table>
@@ -44,42 +42,17 @@ include ("conexion.php");
                             <td class="imptxt"><input type="text" name="Cargo" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false"></td>
                             <td><label>Localidad:</label></td>
                             <td class="imptxt">
-                                <datalist id="Localidad">
-                                    <option value="SEDE"></option>
-                                    <option value="AZUA"></option>
-                                    <option value="BANI"></option>
-                                    <option value="BONAO"></option>
-                                    <option value="CONSTANZA"></option>
-                                    <option value="COTUI"></option>
-                                    <option value="DAJABON"></option>
-                                    <option value="EL SEIBO"></option>
-                                    <option value="GUERRA"></option>
-                                    <option value="HAINA"></option>
-                                    <option value="HATO MAYOR"></option>
-                                    <option value="HIGUEY"></option>
-                                    <option value="JARABACOA"></option>
-                                    <option value="LA ROMANA"></option>
-                                    <option value="LA VEGA"></option>
-                                    <option value="LAS MATAS DE FARFAN"></option>
-                                    <option value="LUPERON"></option>
-                                    <option value="MAIMON"></option>
-                                    <option value="MONTE CRISTI"></option>
-                                    <option value="NAGUA"></option>
-                                    <option value="PUERTO PLATA"></option>
-                                    <option value="SALCEDO"></option>
-                                    <option value="SAN CRISTOBAL"></option>
-                                    <option value="SAN FRANCISCO DE MACORIS"></option>
-                                    <option value="SAN JOSE DE OCOA"></option>
-                                    <option value="SAN JUAN DE LA MAGUANA"></option>
-                                    <option value="SAN PEDRO DE MACORIS"></option>
-                                    <option value="SANCHEZ"></option>
-                                    <option value="SANTIAGO DE LOS CABALLEROS"></option>
-                                    <option value="SANTO DOMINGO ESTE"></option>
-                                    <option value="SANTO DOMINGO OESTE"></option>
-                                    <option value="SOSUA"></option>
-                                    <option value="BARAHONA"></option>
-                                </datalist>
-                                <input list="Localidad" type="text" name="Localidad" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false">
+                                
+                                <select name="Localidad">
+                                    <?php while ($d=mysqli_fetch_array($Q))
+                                        {
+                                    ?>
+                                        <option value="1"><?php echo $d['name'] ?></option>
+                                    <?php
+                                        }
+                                    ?>
+                                </select>
+                                
                             </td>
                         </tr>
                         <tr>
@@ -101,7 +74,6 @@ include ("conexion.php");
                             <td class="imptxt"><input type="text" name="Extension" maxlength="4" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false"></td>
                         </tr>
                         <tr>
-                            
                             <td><label>No. de Flota:</label></td>
                             <td class="imptxt"><input type="text" name="No_Flota" maxlength="10" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false"></td>
                         </tr>
@@ -110,7 +82,7 @@ include ("conexion.php");
                 <div id="TB-sol-div">
                     <table id="TB-sol">
                         <tr>
-                            <th class="TB-sol-th" colspan="4">TIPO DE SOLICITUD</th>
+                            <th class="TB-sol-th" colspan="2">TIPO DE SOLICITUD</th>
                         </tr>
                         <tr>
                             <td class="TB-sol-rad"><label><input type="radio" name="asig" value="Asignacion">Asignación</label></td>
@@ -267,6 +239,7 @@ include ("conexion.php");
             
             </form>
         </div>
+    
     </body>
 
 

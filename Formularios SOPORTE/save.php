@@ -29,7 +29,7 @@ if (empty($No_Flota)){$No_Flota=NULL;}
     //Servicios de acceso
 
 
-//Hacer sentencia de SQL
+//Hacer sentencia de SQL para la tabla de Informacion_Empleado
 $sql="INSERT INTO Informacion_Empleado VALUES('$Numero_Empleado',
                                               '$Nombre_Empleado',
                                               '$Cargo',
