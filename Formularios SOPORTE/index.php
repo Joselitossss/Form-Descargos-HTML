@@ -111,7 +111,7 @@
                         <tr>
                             <td class="TB-equip-lbl"><label for="imei">IMEI/Service Tag:</label></td>
                             <td class="TB-equip-input"><input type="text" name="imei" maxlength="22"></td>
-                        </tr>
+                        </tr>  
                         <tr>
                             <td class="TB-equip-lbl"><label for="model">Modelo:</label></td>
                             <td class="TB-equip-input"><input type="text" name="model" maxlength="22"></td>
