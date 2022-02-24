@@ -1,0 +1,388 @@
+@media print{
+ .NotPrint{
+     visibility: hidden;
+     position: absolute;
+ }
+ #TBSelect{
+    -webkit-appearance: none;
+    border: none;
+ }
+}
+
+form{
+    background-color: rgb(255, 255, 255);
+    width: 1000px;
+    /*text-align: center;*/ 
+    display:inline-table;
+    height: 100%;
+    border: 2px solid rgb(0, 0, 0);
+    font-size: 200%;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+#formdiv{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    height: auto;
+}
+#headform{
+    border-bottom: 2px solid black;
+    display: inline-block;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+#logo{
+    width: 20% ;
+    /*background-image: url(img/logo.png);*/
+    text-align: center;
+    height: 10%;
+    overflow:hidden;
+    display:flex;
+    position: relative;
+}
+
+#LogIM{
+    width: 100%;
+    height:175px;
+}
+#line-headform{
+    border-left:solid black 2px;
+    margin: 0;
+    padding: 0;
+}
+#title{
+    width: 80%;
+    height: 10%;
+    overflow:hidden;
+    align-items: center;
+    margin: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#titleN{
+    width: 100%;
+    height: auto;
+    font-size: 85%;
+}
+#fecha{
+    text-align: right;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+    padding-right: 5px;
+    margin-bottom: 5px;
+}
+#infoP{
+    width: 100%;
+    text-align: center;
+}
+label{
+    font-size: 90%;
+}
+table{
+    text-align: right;
+    margin: 0 auto; 
+    width: 100%;
+}
+.TB-Sig{
+    text-align: center;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 2px;
+    height: 100px;
+}
+.FORM1{
+    width: 600px;
+    border: none;
+}
+th{
+    text-align: center;
+    border: 1px solid black;
+}
+td{
+    margin: 0 auto;
+}
+.td-infoP{
+    font-size: 60%;
+    padding-right: 5%;
+}
+select option{
+    word-wrap: break-word;
+    white-space: normal;
+}
+select {
+    overflow: hidden;
+    white-space: pre;
+    text-overflow: ellipsis;
+    padding: 2px;
+  }
+
+#TB-sol-div{
+    float: left;
+    padding-top: 5px;
+    width: 45%;
+}
+#TB-sol{
+    float: left;
+}
+.TB-sol-rad{
+    text-align: left;
+    font-size: 60%;
+}
+.TB-sol-chk{
+    text-align: center;
+    font-size: 65%;
+}
+.TB-sol-lbl{
+    text-align: center;
+    font-size: 60%;
+}
+.TB-sol-th{
+    padding: 0;
+    font-size: 60%;
+    width: 100%;
+}
+
+#TB-equip-div{
+    float: right;
+    padding-top: 5px;
+    width: 45%;
+}
+.TB-equip-lbl{
+    text-align: right;
+    font-size: 60%;
+    padding-right: 20%;
+}
+.TB-equip-input{
+    text-align: left;
+}
+.TB-sc-div{
+    width: 100%;
+}
+
+#TB-R-div{
+    width: 100%;
+}
+
+#TB-R{
+    height: 40px;
+    width: 400px;
+}
+
+.TB-R-th{
+    font-size: 50%;
+}
+.TB-M-th{
+    font-size: 50%;
+}
+#TBSelect{
+    text-align: center;
+    font-size: 45%;
+    display: block;
+}
+#TD-Select{
+    border: solid 1px black;
+    text-align: center;
+    border: none;
+}
+#Select-tb{
+    text-align: left;
+}
+#TB-M-div{
+    float: right;
+    padding: 0px, 3px, 0px, 2px;
+    width: 43.6%;
+}
+#TB-M{
+    height: 40px;
+    width: 306px;
+}
+.TB-lbl-M{
+    padding: 0;
+    font-size: 50%;
+    text-align: left;
+}
+.TB-as-th{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 60%;
+    width: 100%;
+}
+
+.TB-lbl-as{
+text-align: justify;
+margin: 0;
+padding: 0;
+padding-right: 5%;
+padding-left: 1%;
+border: none;
+text-align: justify;
+font-size: 50%;
+}
+
+.TB-inp-as{
+width: 5%;
+margin: 0;
+padding: 0;
+border: none;
+text-align: right;
+vertical-align: top;
+}
+
+.TB-js-div{
+   float: left;
+    padding-top: 5px;
+    width: 45%;
+}
+
+/*#TB-js{
+    
+}*/
+
+.TB-js-th{
+    display: flex;
+    padding: 0;
+    margin-top: 7px;
+    font-size: 60%;
+    width: 100%;
+}
+
+.inpt_PI{
+text-align: left;
+padding-top: 0px;
+padding-left: 1px;
+border-radius: 1px solid;
+}
+
+.ns1{
+    width: 200px;    
+    border-bottom:1px solid rgb(0, 0, 0);
+    top:10px;
+    margin-top: 50px;
+}
+.TB-ns{
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+.fim-1{
+    text-align: center;
+    font-size: 70%;
+}
+.lbl-as{
+   font-weight: bold;
+   margin: 0;
+   padding: 0;
+}
+
+.lbl-eq{
+    font-size: 60%;
+    width: 85px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.Fde1{
+    text-align: left;
+    height: 25px;
+    font-size: 60%;
+}
+
+#inpFde1{
+width: 200px;
+outline: none;
+background: none;
+border: none;
+border-bottom: 1px solid rgb(0, 0, 0) !important;
+}
+
+.inpFde2{
+    width: 300px;
+    height: 50px;
+    border: 0px;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border-bottom: 1px solid rgb(0, 0, 0) !important;
+    }
+
+.Fde2{
+   padding-right: 20px;   
+   width: 300px;
+}
+#buttons.NotPrint{
+margin: auto;
+display: table;
+}
+.span-text {
+    display: block;
+    width: inherit;
+    overflow: hidden;
+    resize: vertical;
+    min-height: 40px;
+    line-height: 20px;
+    border: 1px solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: justify;
+    font-size: 50%;
+  }
+  
+  .span-text[contenteditable]:empty::before {
+    content: "Escriba aquí";
+    color: darkgray;
+    text-align: justify;
+  }
+  #TB-txt-th{
+    font-size: 60%;
+    width: fit-content;
+    border: none;
+  }
+  #TB-just-th{
+    font-size: 60%;
+    text-align: left;
+    border: none;
+    padding-left: 9px;
+    padding-right: 20px;
+  }
+  #TB-txt{
+      border: 1px black solid;
+  }
+  #R-P{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+  }
+  
+.Nr{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    font-size: 60%;
+    }
+#spanmin{
+    width: 100px;
+    font-size: 50%;
+}
+#Date{
+    font-size: 60%;
+}
+#inp-sol{
+    font-size: 90%;
+    border: none;
+    border-bottom: 1px black solid;
+    -webkit-appearance: none;
+}

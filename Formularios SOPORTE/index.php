@@ -4,7 +4,8 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="print.css" media="print">
         <script type="text/javascript" src="Function.js"></script>
     </head>
 
@@ -18,13 +19,14 @@
                 <div id="headform">
                     <div id="logo">
                         <img id="LogIM" src="img/logo.png" alt="ADR"/>
-                    </div>    
+                    </div>
+                    <div id="line-headform"></div>    
                     <div id=title>
                         <h1 id="titleN">FORMULARIO DE SOLICITUD Y CAMBIO DE EQUIPOS COMUNICACION MOVIL</h1>
                     </div>
                 </div>
                 <div id="fecha">
-                    <label>Fecha: <input type="date" name="fecha_form" value="<?php echo date("Y-m-d");?>" require></label>
+                    <label id="Date">Fecha: <input type="date" name="fecha_form" value="<?php echo date("Y-m-d");?>" require></label>
                 </div>
                 <div id="infoP">
                     <table>
@@ -32,50 +34,44 @@
                             <th class="TB-sol-th" colspan="4">INFORMACION DEL USUARIO</th>
                         </tr>
                         <tr>
-                            <td><label class="Test">Nombre del Usuario:</label></td>
-                            <td class="imptxt"><input type="text" name="Nombre_Empleado" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false" maxlength="21"></td>
-                            <td><label>Número de Empleado:</label></td>
-                            <td id="Numero_Empleado" class="imptxt"><input type="text" name="Numero_Empleado" maxlength="4" autocomplete="off" required onkeypress="return valideKey(event);" ></td>
+                            <td class="td-infoP"><label>Nombre del Usuario:</label><input id="inp-sol" type="text" name="Nombre_Empleado" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false" maxlength="21"></td>
+                            <td class="td-infoP"><label>Número de Empleado:</label><input id="inp-sol" type="text" name="Numero_Empleado" maxlength="4" autocomplete="off" required onkeypress="return valideKey(event);" ></td>
                         </tr>
                         <tr>
-                            <td><label>Cargo/Puesto:</label></td>
-                            <td class="imptxt"><input type="text" name="Cargo" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false"></td>
-                            <td><label>Localidad:</label></td>
-                            <td class="imptxt">
-                                
-                                <select name="Localidad">
-                                    <?php while ($d=mysqli_fetch_array($Q))
+                            <td class="td-infoP"><label>Cargo/Puesto:<input id="inp-sol" type="text" name="Cargo" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false"></label></td>
+                            <td class="td-infoP"><label>No. de Flota:<input id="inp-sol" type="text" name="No_Flota" maxlength="10" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false"></label></td>
+                        </tr>
+                        <tr>
+                            <td class="td-infoP">
+                                <label>Departamento:
+                                    <datalist id="DEP">
+                                        <option value="TECNOLOGIA"></option>
+                                        <option value="RRHH"></option>
+                                        <option value="CAJA GENERAL"></option>
+                                        <option value="COMPRAS"></option>
+                                        <option value="CUENTAS POR COBRAR"></option>
+                                        <option value="CONTABILIDAD"></option>
+                                        <option value="RELACIONES PUBLICAS"></option>
+                                        <option value="TRANSPORTACION"></option>
+                                    </datalist>
+                                    <input id="inp-sol" list="DEP" type="text" name="Departamento" autocomplete="off" onkeypress="return soloLetras(event)">
+                                </label>
+                            </td>
+                            <td class="td-infoP"><label>Extensión:<input id="inp-sol" type="text" name="Extension" maxlength="4" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false"></label></td>
+                        </tr>
+                        <tr>
+                            <td class="td-infoP"><label>Localidad:
+                                    <select id="inp-sol" name="Localidad">
+                                        <?php while ($d=mysqli_fetch_array($Q))
                                         {
-                                    ?>
-                                        <option value="1"><?php echo $d['name'] ?></option>
-                                    <?php
+                                            ?>
+                                                <option value="1"><?php echo $d['name'] ?></option>
+                                            <?php
                                         }
-                                    ?>
-                                </select>
-                                
+                                        ?>
+                                    </select>
+                                </label>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>Departamento:</label>
-                                <datalist id="DEP">
-                                    <option value="TECNOLOGIA"></option>
-                                    <option value="RRHH"></option>
-                                    <option value="CAJA GENERAL"></option>
-                                    <option value="COMPRAS"></option>
-                                    <option value="CUENTAS POR COBRAR"></option>
-                                    <option value="CONTABILIDAD"></option>
-                                    <option value="RELACIONES PUBLICAS"></option>
-                                    <option value="TRANSPORTACION"></option>
-                                </datalist>
-                            </td>
-                            <td class="imptxt"><input list="DEP" type="text" name="Departamento" autocomplete="off" onkeypress="return soloLetras(event)"></td>
-                            <td><label>Extensión:</label></td>
-                            <td class="imptxt"><input type="text" name="Extension" maxlength="4" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false"></td>
-                        </tr>
-                        <tr>
-                            <td><label>No. de Flota:</label></td>
-                            <td class="imptxt"><input type="text" name="No_Flota" maxlength="10" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false"></td>
                         </tr>
                     </table>
                 </div>
@@ -109,12 +105,10 @@
                             <td class="TB-sol-chk"><Label for="lpt"><input type="checkbox" name="lpt">Laptop</Label></td>
                         </tr>
                         <tr>
-                            <td class="TB-equip-lbl"><label for="imei">IMEI/Service Tag:</label></td>
-                            <td class="TB-equip-input"><input type="text" name="imei" maxlength="22"></td>
+                            <td colspan="4" class="TB-equip-lbl"><label for="imei">IMEI/Service Tag:<input type="text" name="imei" maxlength="22"></label></td>
                         </tr>
                         <tr>
-                            <td class="TB-equip-lbl"><label for="model">Modelo:</label></td>
-                            <td class="TB-equip-input"><input type="text" name="model" maxlength="22"></td>
+                            <td colspan="4" class="TB-equip-lbl"><label for="model">Modelo:<input type="text" name="model" maxlength="22"></label></td>
                         </tr>
                     </table>
                 </div>
@@ -131,17 +125,17 @@
                     </table>
                 </div>
                 <div id="TB-R-div">
-                    <table>
+                    <table id="Select-tb">
                         <tr>
-                            <th class="TB-sol-th" colspan="2">SELECCIONE LOS SERVICIOS DE ACCESO CELULAR SEGUN POLITICA</th>
+                            <th class="TB-sol-th" colspan="4">ASIGNACION DE MINUTOS CELULAR</th>
                         </tr>
                         <tr>
                             <th class="TB-R-th">RANGO</th>
                             <th class="TB-M-th">MINUTOS</th>
                         </tr>
-                        <tr>    
-                            <th id="TB-ACM">
-                                <select name="AccesMovil" class="ACM">
+                        <tr>
+                            <td id="TD-Select">
+                                <select id="TBSelect" name="AccesMovil" class="ACM" onchange="minutosselecionados();">
                                     <option value="1">Supervisores y Subgerentes: Área técnica, pérdida, comercial, distribución, tecnología</option> 
                                     <option value="2">Choferes y mensajeros</option> 
                                     <option value="3">Coordinadores (Mant. Edificio, Transportación, Almacén, Comercial, Seguridad Física e Industrial)</option>
@@ -152,18 +146,9 @@
                                     <option value="8">Directores</option>
                                     <option value="9">Gerente General</option>
                                 </select>
-                            </th>
-                            <th class="TB-lbl-M"><label><input type="checkbox">Llamadas entre flotas (CERRADA ILIMITADA)</label></th>
-                            <th class="TB-lbl-M"><label><input type="checkbox">Llamadas entre flotas (CERRADA ILIMITADA)</label></th>
-                            <th class="TB-lbl-M"><label><input type="checkbox">Llamadas entre flotas (CERRADA ILIMITADA)</label></th>
-                            <th class="TB-lbl-M"><label><input type="checkbox">300 (ABIERTA LIMITADA)</label></th>
-                            <th class="TB-lbl-M"><label><input type="checkbox">500 (ABIERTA LIMITADA)</label></th>
-                            <th class="TB-lbl-M"><label><input type="checkbox">500 (ABIERTA LIMITADA)</label></th>
-                            <th class="TB-lbl-M"><label><input type="checkbox">600 (ABIERTA LIMITADA)</label></th>
-                            <th class="TB-lbl-M"><label><input type="checkbox">Abierta Ilimitada Local)</label></th>
-                            <th class="TB-lbl-M"><label><input type="checkbox">Abierta Ilimitada/LDI/Roaming</label></th>
+                            </td>
+                            <td><span class="TB-sol-lbl" id="spanmin">Llamadas entre flotas (CERRADA ILIMITADA)</span></td>
                         </tr>
-                        
                     </table>
                 </div>
                 <div>
@@ -183,7 +168,7 @@
                     </table>
                 </div>
                 <div id="TB-js-div">
-                    <table id="TB-js">
+                    <table>
                         <tr>
                             <th class="TB-js-th">JUSTIFIQUE LA RAZON DE DICHA SOLICITUD :</th>
                         </tr>
@@ -195,51 +180,46 @@
                 <div id="TB-txt">
                     <table id="TB-txt">
                         <tr>
-                            <th class="TB-txt-th">NOTA: Los equipos pertenecen a ADR. Es responsabilidad del empleado velar por el cuidado del equipo. La empresa cubrirá hasta 1 (una) reparación en un periodo de un año y la reposición del equipo por pérdida correrán por cuenta del empleado con el monto de reposición.</th>
+                            <th id="TB-txt-th">NOTA:</th>
+                            <th id="TB-just-th">Los equipos pertenecen a ADR. Es responsabilidad del empleado velar por el cuidado del equipo. La empresa cubrirá hasta 1 (una) reparación en un periodo de un año y la reposición del equipo por pérdida correrán por cuenta del empleado con el monto de reposición.</th>
                         </tr>
-                        <!-- name and signature -->
                     </table>
+
+                    <!-- name and signature -->
 
                     <table class="TB-ns">
-                            <br>
-                        <div class="ns1" >
-                        </div>
-                            <br>
-                    </table>
-
-                        
-                        <label for="text" class="lbl-as">Director TIC</label>
+                        <tr>
+                            <td class="fim-1"><div class="ns1" ></div></td>
+                        </tr>
+                        <tr>
+                            <td class="fim-1"><label class="lbl-as">Director TIC</label></td>
+                        </tr>
+                    </table>                        
                 </div>
                 <table>
-                    <div>
+                    <tr>
                         <th class="lbl-eq">ENTREGA DE EQUIPO (PARA USO DE TECNOLOGIA)</th>
-                    </div>
-                </table>
-                <table>
-                    <div>
+                    </tr>
+                    <tr>
                         <td class="Fde1">
-                            <label>FECHA DE ENTREGA:</label>
-                            <input type="text" class="inpFde1"><br>
+                            <label>FECHA DE ENTREGA:<input type="text" id="inpFde1"><br></label>
                         </td>
-                    </div>
+                    </tr>
+                    <tr>
+                        <td id="R-P"><input type="text" class="inpFde2"></td>
+                    </tr>
+                    <tr>
+                        <td><label  class="Nr"> <br> Recibido por</label></td>
+                    </tr>
                 </table>
-                <div>
-                    <input type="text" class="inpFde2">
-                    <label  class="Nr"> <br> Recibido por</label>
-                </div>
-                    <br><br>
                 <div id="buttons.NotPrint" class="NotPrint">
                     <input type="reset" value="Reset" />
                     <input type="submit" value="Enviar" /> <br>
                     <br>
                     <input type="button" value="Importar" />
                 </div>
-            
-            
-            
             </form>
         </div>
-    
     </body>
 
 

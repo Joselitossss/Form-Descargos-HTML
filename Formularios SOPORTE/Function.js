@@ -33,3 +33,29 @@ function valideKey(evt){
     }
   }
   
+  /* Funcion para colocar el nombre en el span "span-min" */
+
+  function minutosselecionados(){
+    let TBSelect = document.getElementById("TBSelect");
+    let LGL = TBSelect.value;
+
+    if(LGL == '7'){
+      document.getElementById('spanmin').innerText= '600 (ABIERTA LIMITADA)';
+    }else if (LGL == '1'){
+      document.getElementById('spanmin').innerText= 'Llamadas entre flotas (CERRADA ILIMITADA)';
+    }else if (LGL == '2'){
+      document.getElementById('spanmin').innerText= 'Llamadas entre flotas (CERRADA ILIMITADA)';
+    }else if (LGL == '3'){
+      document.getElementById('spanmin').innerText= 'Llamadas entre flotas (CERRADA ILIMITADA)';
+    }else if (LGL == '4'){
+      document.getElementById('spanmin').innerText= '300 (ABIERTA LIMITADA)';
+    }else if (LGL == '5'){
+      document.getElementById('spanmin').innerText= '500 (ABIERTA LIMITADA)';
+    }else if (LGL == '6'){
+      document.getElementById('spanmin').innerText= '500 (ABIERTA LIMITADA)';
+    }else if (LGL == '8'){
+      document.getElementById('spanmin').innerText= 'Abierta Ilimitada Local';
+    }else if (LGL == '9'){
+      document.getElementById('spanmin').innerText= 'Abierta Ilimitada/LDI/Roaming';
+    }
+  }
