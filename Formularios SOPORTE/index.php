@@ -12,9 +12,9 @@
     <body>
         <?php
             include ("conexion.php");
-            $Q=mysqli_query($conn,"SELECT name from glpidb.glpi_locations" )
+            $Q=mysqli_query($conn,"SELECT id, name from glpidb.glpi_locations" )
         ?>
-        <div id="formdiv">  
+        <div id="formdiv">
             <form action="save.php" method="post">
                 <div id="headform">
                     <div id="logo">
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div id="fecha">
-                    <label id="Date">Fecha: <input type="date" name="fecha_form" value="<?php echo date("Y-m-d");?>" require></label>
+                    <label id="Date">Fecha: <input class="inp-sol" type="date" name="fecha_form" value="<?php echo date("Y-m-d");?>" require></label>
                 </div>
                 <div id="infoP">
                     <table>
@@ -34,12 +34,12 @@
                             <th class="TB-sol-th" colspan="4">INFORMACION DEL USUARIO</th>
                         </tr>
                         <tr>
-                            <td class="td-infoP"><label>Nombre del Usuario:</label><input id="inp-sol" type="text" name="Nombre_Empleado" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false" maxlength="21"></td>
-                            <td class="td-infoP"><label>Número de Empleado:</label><input id="inp-sol" type="text" name="Numero_Empleado" maxlength="4" autocomplete="off" required onkeypress="return valideKey(event);" ></td>
+                            <td class="td-infoP"><label>Nombre del Usuario:</label><input class="inp-sol" type="text" name="Nombre_Empleado" autocomplete="off" onkeypress="return soloLetras(event)" maxlength="21" required></td>
+                            <td class="td-infoP"><label>Número de Empleado:</label><input class="inp-sol" type="text" name="Numero_Empleado" maxlength="4" autocomplete="off" onkeypress="return valideKey(event);" ></td>
                         </tr>
                         <tr>
-                            <td class="td-infoP"><label>Cargo/Puesto:<input id="inp-sol" type="text" name="Cargo" autocomplete="off" onkeypress="return soloLetras(event)" onpaste="return false"></label></td>
-                            <td class="td-infoP"><label>No. de Flota:<input id="inp-sol" type="text" name="No_Flota" maxlength="10" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false"></label></td>
+                            <td class="td-infoP"><label>Cargo/Puesto:<input class="inp-sol" type="text" name="Cargo" autocomplete="off" onkeypress="return soloLetras(event)"></label></td>
+                            <td class="td-infoP"><label>No. de Flota:<input class="inp-sol" type="text" name="No_Flota" maxlength="10" autocomplete="off" onkeypress="return valideKey(event);"></label></td>
                         </tr>
                         <tr>
                             <td class="td-infoP">
@@ -52,21 +52,31 @@
                                         <option value="CUENTAS POR COBRAR"></option>
                                         <option value="CONTABILIDAD"></option>
                                         <option value="RELACIONES PUBLICAS"></option>
+                                        <option value="TRABAJO SOCIAL"></option>
+                                        <option value="RELACIONES PUBLICAS"></option>
+                                        <option value="ATENCION AL USUARIO"></option>
+                                        <option value="MENSAJERIA"></option>
+                                        <option value="ESCUELA DE EDUCACION ESPECIAL"></option>
+                                        <option value="ADMINISTRACION"></option>
+                                        <option value="LABORATORIO ORTOPEDICO"></option>
                                         <option value="TRANSPORTACION"></option>
                                     </datalist>
-                                    <input id="inp-sol" list="DEP" type="text" name="Departamento" autocomplete="off" onkeypress="return soloLetras(event)">
+                                    <input class="inp-sol" id="inp-sol1" list="DEP" type="text" name="Departamento" autocomplete="off" onkeypress="return soloLetras(event)" required>
                                 </label>
                             </td>
-                            <td class="td-infoP"><label>Extensión:<input id="inp-sol" type="text" name="Extension" maxlength="4" autocomplete="off" onkeypress="return valideKey(event);" onpaste="return false"></label></td>
+                            <td class="td-infoP"><label>Extensión:<input class="inp-sol" type="text" name="Extension" maxlength="4" autocomplete="off" onkeypress="return valideKey(event);"></label></td>
                         </tr>
                         <tr>
                             <td class="td-infoP"><label>Localidad:
-                                    <select id="inp-sol" name="Localidad">
-                                        <?php while ($d=mysqli_fetch_array($Q))
-                                        {
-                                            ?>
-                                                <option value="1"><?php echo $d['name'] ?></option>
-                                            <?php
+                                    <select class="inp-sol" name="Localidad">
+                                        <?php 
+                                        $selected= "SEDE";
+                                        while ($d=mysqli_fetch_array($Q)){
+                                            if($selected == $d['name']){
+                                                echo '<option selected='.'"selected"'.'value="'.$d['id'].'">'.$d['name'].'</option>';
+                                            }else{
+                                                echo '<option value="'.$d['id'].'">'.$d['name'].'</option>';
+                                            }
                                         }
                                         ?>
                                     </select>
@@ -81,17 +91,16 @@
                             <th class="TB-sol-th" colspan="2">TIPO DE SOLICITUD</th>
                         </tr>
                         <tr>
-                            <td class="TB-sol-rad"><label><input type="radio" name="asig" value="Asignacion">Asignación</label></td>
-                            <td class="TB-sol-rad"><label><input type="radio" name="asig" value="Prestamo">Préstamo</label></td>
-                            
+                            <td class="TB-sol-rad"><label><input type="radio" name="asignacion" value="Asignacion" checked>Asignación</label></td>
+                            <td class="TB-sol-rad"><label><input type="radio" name="asignacion" value="Prestamo">Préstamo</label></td>
                         </tr>
                         <tr>
-                            <td class="TB-sol-rad"><label><input type="radio" name="asig" value="Descargo">Descargo</label></td>
-                            <td class="TB-sol-rad"><label><input type="radio" name="asig" value="Reparacion">Reparación</label></td>
+                            <td class="TB-sol-rad"><label><input type="radio" name="asignacion" value="Descargo">Descargo</label></td>
+                            <td class="TB-sol-rad"><label><input type="radio" name="asignacion" value="Reparacion">Reparación</label></td>
                         </tr>
                         <tr>
-                            <td class="TB-sol-rad"><label><input type="radio" name="asig" value="Cambio_equipo">Cambio de equipo</label></td>
-                            <td class="TB-sol-rad"><label><input type="radio" name="asig" value="Reposicio_Sim">Reposición Sim Card</label></td>
+                            <td class="TB-sol-rad"><label><input type="radio" name="asignacion" value="Cambio_equipo">Cambio de equipo</label></td>
+                            <td class="TB-sol-rad"><label><input type="radio" name="asignacion" value="Reposicion_Sim">Reposición Sim Card</label></td>
                         </tr>
                     </table>
                 </div>
@@ -101,26 +110,26 @@
                             <th class="TB-sol-th" colspan="4">TIPO Y MODELO DE EQUIPO</th>
                         </tr>
                         <tr>
-                            <td class="TB-sol-chk"><label for="celular"><input type="checkbox" name="celular">Celular</label></td>
-                            <td class="TB-sol-chk"><Label for="lpt"><input type="checkbox" name="lpt">Laptop</Label></td>
+                            <td class="TB-sol-chk"><label for="celular"><input id="celular" type="checkbox" name="celular" onchange="javascript:showContent()" checked>Celular</label></td>
+                            <td class="TB-sol-chk"><Label for="lpt"><input id="lpt" type="checkbox" name="lpt" onchange="javascript:autocheck()">Laptop</Label></td>
                         </tr>
                         <tr>
-                            <td colspan="4" class="TB-equip-lbl"><label for="imei">IMEI/Service Tag:<input type="text" name="imei" maxlength="22"></label></td>
+                            <td colspan="4" class="TB-equip-lbl"><label for="imei">IMEI/Service Tag:<input class="inp-sol" type="text" name="imei" maxlength="22" required></label></td>
                         </tr>
                         <tr>
-                            <td colspan="4" class="TB-equip-lbl"><label for="model">Modelo:<input type="text" name="model" maxlength="22"></label></td>
+                            <td colspan="4" class="TB-equip-lbl"><label for="model">Modelo:<input class="inp-sol" type="text" name="model" maxlength="22" required></label></td>
                         </tr>
                     </table>
                 </div>
-                <div class="TB-sc-div">
+                <div id="TB-sc-div">
                     <table id="TB-sc">
                         <tr>
                             <th class="TB-sol-th" colspan="6">SELECCIONE LOS SERVICIOS DE ACCESO CELULAR SEGUN POLITICA</th>
                         </tr>
                         <tr>
-                            <td class="TB-sol-lbl"><label><input type="radio" name="celular">Flota Abierta</label></td>
-                            <td class="TB-sol-lbl"><label><input type="radio" name="celular">Flota Cerrada</label></td>
-                            <td class="TB-sol-lbl"><label><input type="radio" name="celular">Lista Blanca</label></td>
+                            <td class="TB-sol-lbl"><label><input type="radio" name="acceso" value="Flota_Abierta">Flota Abierta</label></td>
+                            <td class="TB-sol-lbl"><label><input type="radio" name="acceso" value="Flota_Cerrada" checked>Flota Cerrada</label></td>
+                            <td class="TB-sol-lbl"><label><input type="radio" name="acceso" value="Lista_Blanca">Lista Blanca</label></td>
                         </tr>
                     </table>
                 </div>
@@ -135,7 +144,8 @@
                         </tr>
                         <tr>
                             <td id="TD-Select">
-                                <select id="TBSelect" name="AccesMovil" class="ACM" onchange="minutosselecionados();">
+                                <select id="TBSelect" name="AccesMovil" class="ACM" onchange="minutosselecionados();" required>
+                                    <option value="">Seleccione</option>
                                     <option value="1">Supervisores y Subgerentes: Área técnica, pérdida, comercial, distribución, tecnología</option> 
                                     <option value="2">Choferes y mensajeros</option> 
                                     <option value="3">Coordinadores (Mant. Edificio, Transportación, Almacén, Comercial, Seguridad Física e Industrial)</option>
@@ -151,19 +161,19 @@
                         </tr>
                     </table>
                 </div>
-                <div>
+                <div id="TB-as-div">
                     <table class="TB-as">
                         <tr>
                             <th class="TB-as-th" colspan="2">ASIGNACION SERVICIO DE DATOS (SOLO SE APLICA AL PERSONAL INDICADO A CONTINUACION):</th>
                         </tr>
                         <tr>
-                            <th class="TB-lbl-as"><label><input type="radio" name="Servicios_de_datos" value="Nivel_gerencia">Niveles gerenciales que por sus funciones están más del 50% de su tiempo laboral fuera de la estación de trabajo y/o deben estar disponibles fuera de horario.</label></th>
+                            <th class="TB-lbl-as"><label><input type="radio" name="Nivel_servicio_de_datos" value="Gerencia">Niveles gerenciales que por sus funciones están más del 50% de su tiempo laboral fuera de la estación de trabajo y/o deben estar disponibles fuera de horario.</label></th>
                         </tr>
                         <tr>
-                            <th class="TB-lbl-as"><label><input type="radio" name="Servicios_de_datos" value="Nivel_soporte">Personal que debe dar soporte a sistemas y plataformas tecnológicas.</label></th>
+                            <th class="TB-lbl-as"><label><input type="radio" name="Nivel_servicio_de_datos" value="Soporte">Personal que debe dar soporte a sistemas y plataformas tecnológicas.</label></th>
                         </tr>
                         <tr>
-                            <th class="TB-lbl-as"><label><input type="radio" name="Servicios_de_datos" value="Nivel_Encargado">Encargados de mantenimientos de redes eléctricas, proyectos de construcción, de redes y mantenimiento de edificios, al personal de Distribución, Control de Perdidas y Comunicaciones Estratégicas que deben dar soporte a las redes eléctricas o estar disponibles fuera de horario para atender casos de emergencias.</label></th>
+                            <th class="TB-lbl-as"><label><input type="radio" name="Nivel_servicio_de_datos" value="Mantenimiento" checked>Encargados de mantenimientos de redes eléctricas, proyectos de construcción, de redes y mantenimiento de edificios, al personal de Distribución, Control de Perdidas y Comunicaciones Estratégicas que deben dar soporte a las redes eléctricas o estar disponibles fuera de horario para atender casos de emergencias.</label></th>
                         </tr>
                     </table>
                 </div>
@@ -172,8 +182,8 @@
                         <tr>
                             <th class="TB-js-th">JUSTIFIQUE LA RAZON DE DICHA SOLICITUD :</th>
                         </tr>
-                        <tr>     
-                            <td class="inpt_PI"><span ondrop="false" class="span-text" role="textbox" contenteditable></span></td>
+                        <tr>
+                            <td class="inpt_PI"><textarea name="Justificacion" ondrop="false" class="span-text" placeholder="Escriba aquí" cols="125" onkeyup="autoAdjustTextArea(this);"></textarea></td>
                         </tr>
                     </table>    
                 </div>    
@@ -202,7 +212,7 @@
                     </tr>
                     <tr>
                         <td class="Fde1">
-                            <label>FECHA DE ENTREGA:<input type="text" id="inpFde1"><br></label>
+                            <label>FECHA DE ENTREGA:<input type="date" id="inpFde1" value="<?php echo date("Y-m-d");?>"><br></label>
                         </td>
                     </tr>
                     <tr>
@@ -213,10 +223,10 @@
                     </tr>
                 </table>
                 <div id="buttons.NotPrint" class="NotPrint">
-                    <input type="reset" value="Reset" />
-                    <input type="submit" value="Enviar" /> <br>
+                    <input type="reset" value="Reset">
+                    <input type="submit" value="Enviar" name="Enviar"> <br>
                     <br>
-                    <input type="button" value="Importar" />
+                    <input type="button" value="Importar">
                 </div>
             </form>
         </div>

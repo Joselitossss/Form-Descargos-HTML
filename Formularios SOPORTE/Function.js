@@ -59,3 +59,52 @@ function valideKey(evt){
       document.getElementById('spanmin').innerText= 'Abierta Ilimitada/LDI/Roaming';
     }
   }
+  
+  /* Funcion para hacer un autogrow mientras se escribe en el textarea*/
+  function autoAdjustTextArea(o) {
+    o.style.height = '1px'; // Prevent height from growing when deleting lines.
+    o.style.height = o.scrollHeight + 'px';
+  }
+  // Get a reference to the text area.
+  var txtAra = document.getElementsByClassName('span-text')[0];
+  // Generate some random characters of length between 150 and 300.
+  txtAra.value = randChars(chars,randRange(150,300));
+  // Trigger the event.
+  autoAdjustTextArea(txtAra);
+
+  function showContent() {
+    ServicesAcces = document.getElementById("TB-sc-div");
+    AsignsMinutes = document.getElementById("TB-R-div");
+    AsignsService = document.getElementById("TB-as-div");
+    check = document.getElementById("celular");
+    checklpt = document.getElementById("lpt");
+    var AddRequired = document.getElementById("TBSelect");
+
+    if (check.checked) {
+        ServicesAcces.style.display='block';
+        AsignsMinutes.style.display='block';
+        AsignsService.style.display='block';
+        //document.getElementById('TBSelect').setAttribute ("required","");
+        AddRequired.setAttribute("required", "");   
+    }
+    else {
+        ServicesAcces.style.display='none';
+        AsignsMinutes.style.display='none';
+        AsignsService.style.display='none';
+        checklpt.checked='true';
+        AddRequired.removeAttribute("required", "");
+    }
+  }
+
+    function autocheck(){
+      checklpt = document.getElementById("lpt");
+      var AddRequired = document.getElementById("TBSelect");
+      if (!checklpt.checked){
+        check.checked='true';
+        ServicesAcces.style.display='block';
+        AsignsMinutes.style.display='block';
+        AsignsService.style.display='block';
+        //document.getElementById('TBSelect').setAttribute ("required","");
+        AddRequired.setAttribute("required", ""); 
+      }
+    }

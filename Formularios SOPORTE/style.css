@@ -159,14 +159,19 @@
    .TB-equip-input{
        text-align: left;
    }
-   .TB-sc-div{
+   #TB-sc-div{
        width: 100%;
+       display: block;
    }
    
    #TB-R-div{
        width: 100%;
+       display: block;
    }
-   
+   #TB-as-div{
+       width: 100%;
+       display: block;
+   }
    #TB-R{
        height: 40px;
        width: 400px;
@@ -182,6 +187,9 @@
        text-align: left;
        font-size: 50%;
        display: flex;
+   }
+   #TBSelect:required{
+      /* border: 2px solid red;*/
    }
    #TD-Select{
    border: solid 1px black;
@@ -210,6 +218,7 @@
        padding-bottom: 3px;
        font-size: 70%;
        width: 100%;
+       
    }
    
    .TB-lbl-as{
@@ -292,12 +301,10 @@
    }
    
    #inpFde1{
-   width: 200px;
-   outline: none;
-   background: none;
-   border: none;
-   border-bottom: 1px solid rgb(0, 0, 0) !important;
-   }
+        border-bottom: 1px solid rgb(0, 0, 0);
+        box-sizing: border-box;
+        width: 12%;
+    }
    
    .inpFde2{
        width: 300px;
@@ -319,11 +326,10 @@
    margin: auto;
    display: table;
    }
-   .span-text {
-       display: block;
-       width: inherit;
+   textarea.span-text {
+       display: flex;
        overflow: hidden;
-       resize: vertical;
+       resize: none;
        min-height: 40px;
        line-height: 20px;
        border: 1px solid;
@@ -333,11 +339,16 @@
        padding-bottom: 5px;
        text-align: justify;
        font-size: 65%;
+       border:2px solid rgba(63,63,63,1);
+       width: 100%;
+       height: 100%;
+       position: relative;
+       box-sizing: border-box;
      }
      
-     .span-text[contenteditable]:empty::before {
-       content: "Escriba aquí";
-       color: darkgray;
+     textarea.span-text::-webkit-input-placeholder {
+    
+       color: darkgrey;
        text-align: justify;
      }
      #TB-txt-th{
@@ -369,4 +380,10 @@
    #spanmin{
        width: 100px;
        font-size: 50%;
+   }
+   #inp-sol1{
+    box-sizing: border-box;
+    width: 59%;
+    text-align: justify;
+    font-size: 54%;
    }
