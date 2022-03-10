@@ -1,7 +1,7 @@
 
 <?php   
 
-include ("conexion.php");
+include ("includes/conexion.php");
 
 if(isset($_REQUEST['Enviar'])){
 
@@ -29,15 +29,20 @@ if(isset($_REQUEST['Enviar'])){
         $asignacion=$_POST ['asignacion'];
         $celular= (bool) $_POST ['celular'];
         $lpt= (bool) $_POST ['lpt'];
+        $otros= (bool) $_POST ['otros'];
+        $otro_equipo = $_POST['otro_equipo'];
         $imei=$_POST ['imei'];
         $model=$_POST ['model'];
         $acceso=$_POST ['acceso'];
         $AccesMovil=$_POST ['AccesMovil'];
         $Nivel_servicio_de_datos=$_POST ['Nivel_servicio_de_datos'];
         $fecha_form=$_POST ['fecha_form'];
+        $Justificacion=$_POST ['Justificacion'];
+        $FechaEntrega=$_POST ['FechaEntrega'];
         
         if ($celular!=1){$celular=0;}
         if ($lpt!=1){$lpt=0;}
+        if ($otros!=1){$otros=0;}
         
         //Tipo y modelo de equipo
     
@@ -56,25 +61,33 @@ if(isset($_REQUEST['Enviar'])){
     
     //Hacer sentencia de SQL para la tabla de Descripcion_Solicitud
         if($celular==1){
-        $sql_desc_sol="INSERT INTO form_descargo.Descripcion_Solicitud (asignacion, celular, lpt, imei, model, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form) VALUES ('$asignacion',
+        $sql_desc_sol="INSERT INTO form_descargo.Descripcion_Solicitud (asignacion, celular, lpt, otros, otro_equipo, imei, model, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega) VALUES ('$asignacion',
                                                     '$celular',
                                                     '$lpt',
+                                                    '$otros',
+                                                    '$otro_equipo',
                                                     '$imei',
                                                     '$model',
                                                     '$acceso',
                                                     '$AccesMovil',
                                                     '$Nivel_servicio_de_datos',
-                                                    '$fecha_form')";
+                                                    '$fecha_form',
+                                                    '$Justificacion',
+                                                    '$FechaEntrega')";
         }else{
-        $sql_desc_sol="INSERT INTO form_descargo.Descripcion_Solicitud (asignacion, celular, lpt, imei, model, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form) VALUES ('$asignacion',
+        $sql_desc_sol="INSERT INTO form_descargo.Descripcion_Solicitud (asignacion, celular, lpt, otros, otro_equipo, imei, model, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega) VALUES ('$asignacion',
                                                     '$celular',
                                                     '$lpt',
+                                                    '$otros',
+                                                    '$otro_equipo',
                                                     '$imei',
                                                     '$model',
                                                     'NULL',
                                                     'NULL',
                                                     'NULL',
-                                                    '$fecha_form')";
+                                                    '$fecha_form',
+                                                    '$Justificacion',
+                                                    '$FechaEntrega')";
         }
     //Ejecucion de las sentencias
         $ejecutar = mysqli_query($conn,$sql);
@@ -87,8 +100,8 @@ if(isset($_REQUEST['Enviar'])){
             $ejecutar1 = mysqli_query($conn,$sql_desc_sol);
         
                 if($ejecutar1){
-                    echo"Datos guardados<br><a href='index.php'>Volver</a><br>";
-                    //header("Location:index.php");
+                    //echo"Datos guardados<br><a href='index.php'>Volver</a><br>";
+                    header("Location:index.php");
                 
                 }else{
                     echo"Ha ocurrido un error<br><br>";

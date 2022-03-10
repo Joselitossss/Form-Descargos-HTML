@@ -8,7 +8,9 @@
        border: none;
     }
    }
-   
+   body{
+    background: #ddd;
+   }
    form{
        background-color: rgb(255, 255, 255);
        width: 1200px;
@@ -154,7 +156,7 @@
    }
    .TB-equip-lbl{
        text-align: right;
-       padding-right: 35%;
+       padding-right: 15%;
    }
    .TB-equip-input{
        text-align: left;
@@ -300,7 +302,7 @@
        height: 25px;
    }
    
-   #inpFde1{
+   #FechaEntrega{
         border-bottom: 1px solid rgb(0, 0, 0);
         box-sizing: border-box;
         width: 12%;
@@ -386,4 +388,7 @@
     width: 59%;
     text-align: justify;
     font-size: 54%;
+   }
+   #lbl-otros{
+   display:none;
    }

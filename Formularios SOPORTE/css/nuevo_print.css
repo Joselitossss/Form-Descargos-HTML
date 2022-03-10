@@ -6,12 +6,13 @@
  #TBSelect{
     -webkit-appearance: none;
     border: none;
+    
  }
 }
 
 form{
     background-color: rgb(255, 255, 255);
-    width: 1000px;
+    width: 975px;
     /*text-align: center;*/ 
     display:inline-table;
     height: 100%;
@@ -159,7 +160,7 @@ select {
 .TB-equip-lbl{
     text-align: right;
     font-size: 60%;
-    padding-right: 20%;
+    padding-right: 1%;
 }
 .TB-equip-input{
     text-align: left;
@@ -190,7 +191,7 @@ select {
 }
 #TBSelect{
     text-align: center;
-    font-size: 45%;
+    font-size: 40%;
     display: block;
 }
 #TD-Select{
@@ -230,7 +231,7 @@ padding-right: 5%;
 padding-left: 1%;
 border: none;
 text-align: justify;
-font-size: 50%;
+font-size: 45%;
 }
 
 .TB-inp-as{
@@ -303,7 +304,7 @@ border-radius: 1px solid;
     font-size: 60%;
 }
 
-#inpFde1{
+#FechaEntrega{
 width: fit-content;
 outline: none;
 background: none;
@@ -413,3 +414,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
     -webkit-appearance: none;
     display: none;
 }
+#lbl-otros{
+    display:none;
+    }
