@@ -94,18 +94,22 @@ if(isset($_REQUEST['Enviar'])){
     //Verificar la sentencia
         if(!$ejecutar){
     //    echo"Ha ocurrido un error";
-            echo'<script type="text/javascript"> alert("Los datos no han sido guardados") </script>';
+            echo'<script type="text/javascript"> alert("ERROR AL GUARDAD DATOS") </script>';
         }
         else{
             $ejecutar1 = mysqli_query($conn,$sql_desc_sol);
         
                 if($ejecutar1){
                     //echo"Datos guardados<br><a href='index.php'>Volver</a><br>";
-                    header("Location:index.php");
+                    echo'<script type="text/javascript"> 
+                        alert("Los datos se guardaron exitosamente");
+                        window.location = "index.php"
+                        </script>';
+                    //header("Location:index.php");
                 
                 }else{
                     echo"Ha ocurrido un error<br><br>";
-    
+                    
                 }
         //header("Location: ../index.php");
         //echo'<script type="text/javascript"> alert("Los datos se guardaron exitosamente") </script>';
