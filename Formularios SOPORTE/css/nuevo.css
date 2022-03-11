@@ -19,6 +19,7 @@
        height: 100%;
        border: 2px solid rgb(0, 0, 0);
        font-size: 200%;
+       box-shadow: 0 0 20px #333;
    }
    
    div {
@@ -392,3 +393,6 @@
    #lbl-otros{
    display:none;
    }
+   #lbl-serial{
+    display:none;
+    }

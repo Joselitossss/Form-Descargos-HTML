@@ -1,7 +1,7 @@
 
 <?php   
 
-include ("includes/conexion.php");
+include ("../includes/conexion.php");
 
 if(isset($_REQUEST['Enviar'])){
 
@@ -39,6 +39,7 @@ if(isset($_REQUEST['Enviar'])){
         $fecha_form=$_POST ['fecha_form'];
         $Justificacion=$_POST ['Justificacion'];
         $FechaEntrega=$_POST ['FechaEntrega'];
+        $lptserial=$_POST['lptserial'];
         
         if ($celular!=1){$celular=0;}
         if ($lpt!=1){$lpt=0;}
@@ -61,11 +62,12 @@ if(isset($_REQUEST['Enviar'])){
     
     //Hacer sentencia de SQL para la tabla de Descripcion_Solicitud
         if($celular==1){
-        $sql_desc_sol="INSERT INTO form_descargo.Descripcion_Solicitud (asignacion, celular, lpt, otros, otro_equipo, imei, model, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega) VALUES ('$asignacion',
+        $sql_desc_sol="INSERT INTO form_descargo.Descripcion_Solicitud (asignacion, celular, lpt, otros, otro_equipo, lptserial, imei, model, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega) VALUES ('$asignacion',
                                                     '$celular',
                                                     '$lpt',
                                                     '$otros',
                                                     '$otro_equipo',
+                                                    '$lptserial',
                                                     '$imei',
                                                     '$model',
                                                     '$acceso',
@@ -75,11 +77,12 @@ if(isset($_REQUEST['Enviar'])){
                                                     '$Justificacion',
                                                     '$FechaEntrega')";
         }else{
-        $sql_desc_sol="INSERT INTO form_descargo.Descripcion_Solicitud (asignacion, celular, lpt, otros, otro_equipo, imei, model, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega) VALUES ('$asignacion',
+        $sql_desc_sol="INSERT INTO form_descargo.Descripcion_Solicitud (asignacion, celular, lpt, otros, otro_equipo, lptserial, imei, model, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega) VALUES ('$asignacion',
                                                     '$celular',
                                                     '$lpt',
                                                     '$otros',
                                                     '$otro_equipo',
+                                                    '$lptserial',
                                                     '$imei',
                                                     '$model',
                                                     'NULL',
@@ -103,7 +106,7 @@ if(isset($_REQUEST['Enviar'])){
                     //echo"Datos guardados<br><a href='index.php'>Volver</a><br>";
                     echo'<script type="text/javascript"> 
                         alert("Los datos se guardaron exitosamente");
-                        window.location = "index.php"
+                        window.location = "../index.php"
                         </script>';
                     //header("Location:index.php");
                 

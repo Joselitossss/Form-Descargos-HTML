@@ -15,7 +15,7 @@
             $Q=mysqli_query($conn,"SELECT id, name from glpidb.glpi_locations" )
         ?>
         <div id="formdiv">
-            <form action="../save.php" method="post">
+            <form action="../jp/jp_nuevo.php" method="post">
                 <div id="headform">
                     <div id="logo">
                         <img id="LogIM" src="../img/logo.png" alt="ADR"/>
@@ -74,7 +74,7 @@
                                         $selected= "SEDE";
                                         while ($d=mysqli_fetch_array($Q)){
                                             if($selected == $d['name']){
-                                                echo '<option selected='.'"selected"'.'value="'.$d['id'].'">'.$d['name'].'</option>';
+                                                echo '<option selected='.'"selected"'.'value="'.$d['name'].'">'.$d['name'].'</option>';
                                             }else{
                                                 echo '<option value="'.$d['name'].'">'.$d['name'].'</option>';
                                             }
@@ -111,18 +111,21 @@
                             <th class="TB-sol-th" colspan="3">TIPO Y MODELO DE EQUIPO</th>
                         </tr>
                         <tr>
-                            <td class="TB-sol-chk"><label for="celular"><input id="celular" type="checkbox" name="celular" onchange="javascript:showContent()" checked>Celular</label></td>
-                            <td class="TB-sol-chk"><Label for="lpt"><input id="lpt" type="checkbox" name="lpt" onchange="javascript:autocheck()">Laptop</Label></td>
-                            <td class="TB-sol-chk"><Label for="otros"><input id="otros" type="checkbox" name="otros" onchange="javascript:showOther()">Otro</Label></td>
+                            <td class="TB-sol-chk"><label for="celular"><input id="celular" type="checkbox" name="celular" onchange="javascript:showCelularContent()" checked>Celular</label></td>
+                            <td class="TB-sol-chk"><Label for="lpt"><input id="lpt" type="checkbox" name="lpt" onchange="javascript:showLaptopContent()">Laptop</Label></td>
+                            <td class="TB-sol-chk"><Label for="otros"><input id="otros" type="checkbox" name="otros" onchange="javascript:showOtherContent()">Otro</Label></td>
                         </tr>
                         <tr>
                             <td colspan="3" class="TB-equip-lbl"><label id="lbl-otros" for="equipo">Otro Equipo:<input id="inp-otro" size="32" class="inp-sol" type="text" name="otro_equipo" maxlength="22"></label></td>
-                        </tr >
-                        <tr>
-                            <td colspan="3" class="TB-equip-lbl"><label for="imei">IMEI/Service Tag:<input size="32" class="inp-sol" type="text" name="imei" maxlength="22" required></label></td>
                         </tr>
                         <tr>
-                            <td colspan="3" class="TB-equip-lbl"><label for="model">Modelo:<input size="32" class="inp-sol" type="text" name="model" maxlength="22" required></label></td>
+                            <td colspan="3" class="TB-equip-lbl"><label id="lbl-serial" for="serial">Serial:<input id="inp-serial" size="32" class="inp-sol" type="text" name="lptserial" maxlength="22"></label></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="TB-equip-lbl"><label id="lbl-imei"for="imei">IMEI:<input id="inp-imei" size="32" class="inp-sol" type="text" name="imei" maxlength="22" required></label></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="TB-equip-lbl"><label id="lbl-model" for="model">Modelo:<input size="32" class="inp-sol" type="text" name="model" maxlength="22" required></label></td>
                         </tr>
                     </table>
                 </div>
