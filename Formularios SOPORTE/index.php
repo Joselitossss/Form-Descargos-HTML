@@ -57,7 +57,7 @@
                 </tbody>
             </table>
             
-            <input type="button" class="form-submit" onclick="location.href='nuevo.php'" value="Nuevo">
+            <input type="button" class="form-submit" onclick="location.href='Pages/nuevo.php'" value="Nuevo">
         </form>
     </body>
 </html>

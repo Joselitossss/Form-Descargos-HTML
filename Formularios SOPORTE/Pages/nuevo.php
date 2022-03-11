@@ -4,21 +4,21 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-        <link rel="stylesheet" type="text/css" href="css/nuevo.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="css/nuevo_print.css" media="print">
-        <script type="text/javascript" src="js/Nuevo_Function.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/nuevo.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../css/nuevo_print.css" media="print">
+        <script type="text/javascript" src="../js/Nuevo_Function.js"></script>
     </head>
 
     <body>
         <?php
-            include ("includes/conexion.php");
+            include ("../includes/conexion.php");
             $Q=mysqli_query($conn,"SELECT id, name from glpidb.glpi_locations" )
         ?>
         <div id="formdiv">
-            <form action="save.php" method="post">
+            <form action="../save.php" method="post">
                 <div id="headform">
                     <div id="logo">
-                        <img id="LogIM" src="img/logo.png" alt="ADR"/>
+                        <img id="LogIM" src="../img/logo.png" alt="ADR"/>
                     </div>
                     <div id="line-headform"></div>    
                     <div id=title>
@@ -231,7 +231,7 @@
                     <input type="reset" value="Reset">
                     <input type="submit" value="Enviar" name="Enviar"> <br>
                     <br>
-                    <input type="button" onclick="location.href='index.php'" value="Buscar">
+                    <input type="button" onclick="location.href='../index.php'" value="Buscar">
                 </div>
             </form>
         </div>
