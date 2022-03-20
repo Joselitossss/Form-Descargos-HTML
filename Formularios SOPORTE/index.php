@@ -10,18 +10,23 @@
     <body>
     <?php
             include ("includes/conexion.php");
-            $sql="SELECT I.id, Numero_Empleado, Nombre_Empleado, Localidad, celular, lpt, otros, otro_equipo, imei, model, asignacion FROM Informacion_Empleado AS I, Descripcion_Solicitud AS D WHERE I.id = D.id ORDER by id ASC";
+            $sql="SELECT I.id, Numero_Empleado, Nombre_Empleado, Cargo, Departamento, Localidad, Extension, No_Flota, asignacion, equipo, otro_equipo, lptserial, imei, model, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega FROM Informacion_Empleado AS I, Descripcion_Solicitud AS D WHERE I.id = D.id ORDER by id ASC";
             $rta=mysqli_query($conn,$sql);
         ?>
-        <form action="" class="form-listado" method="post" enctype="multipart/form-data">
+        <form action="buscar.php" class="form-listado" method="post" enctype="multipart/form-data">
             <h1 class="Form-title">Busqueda de Formulario</h1>
             <div class="container_flex">
-                <input type="search" class="form-search" placeholder="Busqueda">
+                <div id="search-div">
+                    <input type="search" id="form-search-inp" placeholder="Escriba aquí...">
+                    <input type="submit" id="form-search-btn" value="Buscar">
+                </div>
+                <div><input type="button" class="form-submit" onclick="location.href='Pages/nuevo.php'" value="Nuevo"></div>
+                
             </div>
             <table class="list-table">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th class="esquinaIZQ">ID</th>
                         <th>Numero de Empleado</th>
                         <th>Nombre</th>
                         <th>Localidad</th>
@@ -29,7 +34,8 @@
                         <th>Imei/Serial</th>
                         <th>Modelo</th>
                         <th>Tipo de solicitud</th>
-                        <th>Accion</th>
+                        <th>Fecha de Entrega</th>
+                        <th class="esquinaDER">Accion</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,16 +46,19 @@
                         <td><?php echo $mostrar ['0'] ?></td>
                         <td><?php echo $mostrar ['1'] ?></td>
                         <td><?php echo $mostrar ['2'] ?></td>
-                        <td><?php echo $mostrar ['3'] ?></td>
-                        <td><?php   
-                        if($mostrar['4']!='0'){echo "Celular<br>";}else{echo "";}
-                        if($mostrar['5']!='0'){echo "Laptop<br>";}else{echo "";}
-                        if($mostrar['6']!='0'){echo $mostrar['7'];}else{echo "";} 
+                        <td><?php echo $mostrar ['5'] ?></td>
+                        <td><?php 
+                        if($mostrar['9']=='Celular'){echo $mostrar ['9'];}
+                        if($mostrar['9']=='Laptop'){echo $mostrar ['9'];}
+                        if($mostrar['9']=='Otro Equipo'){echo $mostrar ['10'];}
                         ?></td>
+                        <td><?php
+                        if($mostrar['9']=='Celular'){echo $mostrar ['12'];}else{echo $mostrar ['11'];}
+                        ?></td>
+                        <td><?php echo $mostrar ['13'] ?></td>
                         <td><?php echo $mostrar ['8'] ?></td>
-                        <td><?php echo $mostrar ['9'] ?></td>
-                        <td><?php echo $mostrar ['10'] ?></td>
-                        <td><a href="editar.php">Editar</a></td>
+                        <td><?php echo $mostrar ['19'] ?></td>
+                        <td><a href="Pages/editar.php?id=<?php echo $mostrar ['0']; ?>">Editar</a></td>
                     </tr>
                     <?php
                     }
@@ -57,7 +66,7 @@
                 </tbody>
             </table>
             
-            <input type="button" class="form-submit" onclick="location.href='Pages/nuevo.php'" value="Nuevo">
+            
         </form>
     </body>
 </html>

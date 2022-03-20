@@ -71,14 +71,32 @@ div {
     font-size: 85%;
 }
 #fecha{
-    text-align: right;
-    display: inline-block;
+    display: grid;
     width: 100%;
     height: auto;
     margin-top: 5px;
     padding-right: 5px;
     margin-bottom: 5px;
-    font-size: 30px;
+    grid-template-columns: 50% 50%;
+    text-align: left;
+    grid-template-areas: "a b";
+ }
+ #id{
+    grid-area: a;
+    margin-left: 10px;
+    font-size:large;
+}
+#id-form{
+    font-size: 60%;
+    border: none;
+    -webkit-appearance: none;
+    outline: none;
+}
+#Date{
+ grid-area: b;
+ justify-self: end;
+ align-self: center;
+ margin-right: 10px;
 }
 #infoP{
     width: 100%;
@@ -416,4 +434,4 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 #lbl-otros{
     display:none;
-    }
+}

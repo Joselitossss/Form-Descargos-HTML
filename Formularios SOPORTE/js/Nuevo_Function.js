@@ -86,82 +86,105 @@ function showCelularContent() {
   inp_serial = document.getElementById('inp-serial');
   lbl_imei = document.getElementById('lbl-imei');
   inp_imei = document.getElementById('inp-imei');
+  lbl_repSim = document.getElementById('lbl-repSim');
 
-  if (celular.checked) {
+  if (celular.checked='true') {
+
+      //Mostrar valores de Celular
       ServicesAcces.style.display='block';
       AsignsMinutes.style.display='block';
       AsignsService.style.display='block';
-      //document.getElementById('TBSelect').setAttribute ("required","");
       AddRequired.setAttribute("required", "");
       lbl_imei.style.display='block'
-      inp_imei.setAttribute("required", "");   
-    }else{ 
-      if(!otros.checked){
-        laptop.checked='true';
-        lbl_serial.style.display='block'
-        inp_serial.setAttribute("required", "");
-      }
-      ServicesAcces.style.display='none';
-      AsignsMinutes.style.display='none';
-      AsignsService.style.display='none';
-      AddRequired.removeAttribute("required", "");
-      lbl_imei.style.display='none';
-      inp_imei.removeAttribute("required", "");
-      inp_imei.value = "";
+      inp_imei.setAttribute("required", "");
+      lbl_repSim.style.display='block';
+      inp_imei.value="";   
+
+      //Ocultar valores de Laptop
+      lbl_serial.style.display='none';
+      inp_serial.value = "";
+      inp_serial.removeAttribute("required", "");
+
+      //Ocultar valores de Otro
+      lbl_otros.style.display='none';
+      inp_otros.value = "";
+      inp_otros.removeAttribute("required", "");
     }
 }
 
 function showLaptopContent(){
+  ServicesAcces = document.getElementById("TB-sc-div");
+  AsignsMinutes = document.getElementById("TB-R-div");
+  AsignsService = document.getElementById("TB-as-div");
   celular = document.getElementById("celular");
   laptop = document.getElementById("lpt");
   var AddRequired = document.getElementById("TBSelect");
-  otros = document.getElementById("otros");
   lbl_otros = document.getElementById('lbl-otros');
-  inp_otros = document.getElementById('inp-otro');
+  otros = document.getElementById("otros");
+  inp_otros = document.getElementById('inp-otro')
   lbl_serial = document.getElementById('lbl-serial');
   inp_serial = document.getElementById('inp-serial');
   lbl_imei = document.getElementById('lbl-imei');
+  inp_imei = document.getElementById('inp-imei');
+  lbl_repSim = document.getElementById('lbl-repSim');
 
-    if (!laptop.checked){
-      if(!celular.checked){
-        otros.checked='true';
-        lbl_otros.style.display='block';
-        inp_otros.setAttribute("required", "");
-      }
-      lbl_serial.style.display='none'
-      inp_serial.value = "";
-      inp_serial.removeAttribute("required", ""); 
-    }else{
-      lbl_serial.style.display='block'
+    if (laptop.checked='true'){
+
+      //Ocultar valores de Celular
+      ServicesAcces.style.display='none';
+      AsignsMinutes.style.display='none';
+      AsignsService.style.display='none';
+      AddRequired.removeAttribute("required", "");
+      lbl_imei.style.display='none'
+      inp_imei.removeAttribute("required", "");
+      lbl_repSim.style.display='none';   
+
+      //Mostrar valores de Laptop
+      lbl_serial.style.display='block';
       inp_serial.setAttribute("required", "");
+      inp_serial.value = "";
+
+      //Ocultar valores de Otro
+      lbl_otros.style.display='none';
+      inp_otros.value = "";
+      inp_otros.removeAttribute("required", "");
     }
 }
   
 function showOtherContent() {
+  ServicesAcces = document.getElementById("TB-sc-div");
+  AsignsMinutes = document.getElementById("TB-R-div");
+  AsignsService = document.getElementById("TB-as-div");
   celular = document.getElementById("celular");
-  otros = document.getElementById("otros");
-  lbl_otros = document.getElementById('lbl-otros');
   laptop = document.getElementById("lpt");
+  var AddRequired = document.getElementById("TBSelect");
+  lbl_otros = document.getElementById('lbl-otros');
+  otros = document.getElementById("otros");
   inp_otros = document.getElementById('inp-otro')
+  lbl_serial = document.getElementById('lbl-serial');
   inp_serial = document.getElementById('inp-serial');
   lbl_imei = document.getElementById('lbl-imei');
+  inp_imei = document.getElementById('inp-imei');
+  lbl_repSim = document.getElementById('lbl-repSim');
 
-  if (!otros.checked) {
-    lbl_otros.style.display='none';
-    inp_otros.value = "";
-    inp_otros.removeAttribute("required", "");
-    
-    if(!laptop.checked){
-      celular.checked='true';
-      lbl_imei.style.display='block';
-      inp_imei.setAttribute("required", "");
-      ServicesAcces.style.display='block';
-      AsignsMinutes.style.display='block';
-      AsignsService.style.display='block';
-      //document.getElementById('TBSelect').setAttribute ("required","");
-      AddRequired.setAttribute("required", "");} 
-  }else {
-    lbl_otros.style.display='block';
-    inp_otros.setAttribute("required", "");
-  }
+    if (otros.checked='true'){
+
+      //Ocultar valores de Celular
+      ServicesAcces.style.display='none';
+      AsignsMinutes.style.display='none';
+      AsignsService.style.display='none';
+      AddRequired.removeAttribute("required", "");
+      lbl_imei.style.display='none'
+      inp_imei.removeAttribute("required", "");
+      lbl_repSim.style.display='none';
+      
+      //Limpiar valores de Serial
+      inp_serial.value = "";
+
+      //Mostrar valores de Otro
+      lbl_otros.style.display='block';
+      inp_otros.setAttribute("required", "");
+      lbl_serial.style.display='block';
+      inp_serial.setAttribute("required", "");
+    }
 }

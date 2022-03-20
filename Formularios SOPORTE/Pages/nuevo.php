@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div id="fecha">
-                    <label id="Date">Fecha: <input class="inp-sol" type="date" name="fecha_form" value="<?php echo date("Y-m-d");?>" require></label>
+                    <label id="Date">Fecha: <input class="inp-sol" type="date" name="fecha_form" value="<?php date_default_timezone_set('America/Santo_Domingo'); echo date("Y-m-d");?>" require></label>
                 </div>
                 <div id="infoP">
                     <table>
@@ -101,7 +101,7 @@
                         </tr>
                         <tr>
                             <td class="TB-sol-rad"><label><input type="radio" name="asignacion" value="Cambio de Equipo">Cambio de equipo</label></td>
-                            <td class="TB-sol-rad"><label><input type="radio" name="asignacion" value="Reposicion de Sim">Reposición Sim Card</label></td>
+                            <td class="TB-sol-rad"><label id="lbl-repSim"><input type="radio" name="asignacion" value="Reposicion de Sim">Reposición Sim Card</label></td>
                         </tr>
                     </table>
                 </div>
@@ -111,9 +111,9 @@
                             <th class="TB-sol-th" colspan="3">TIPO Y MODELO DE EQUIPO</th>
                         </tr>
                         <tr>
-                            <td class="TB-sol-chk"><label for="celular"><input id="celular" type="checkbox" name="celular" onchange="javascript:showCelularContent()" checked>Celular</label></td>
-                            <td class="TB-sol-chk"><Label for="lpt"><input id="lpt" type="checkbox" name="lpt" onchange="javascript:showLaptopContent()">Laptop</Label></td>
-                            <td class="TB-sol-chk"><Label for="otros"><input id="otros" type="checkbox" name="otros" onchange="javascript:showOtherContent()">Otro</Label></td>
+                            <td class="TB-sol-chk"><label for="celular"><input id="celular" type="radio" name="equipo" value="Celular" onclick="javascript:showCelularContent()" checked>Celular</label></td>
+                            <td class="TB-sol-chk"><Label for="lpt"><input id="lpt" type="radio" name="equipo" value="Laptop" onclick="javascript:showLaptopContent()">Laptop</Label></td>
+                            <td class="TB-sol-chk"><Label for="otros"><input id="otros" type="radio" name="equipo" value="Otro Equipo" onclick="javascript:showOtherContent()">Otro</Label></td>
                         </tr>
                         <tr>
                             <td colspan="3" class="TB-equip-lbl"><label id="lbl-otros" for="equipo">Otro Equipo:<input id="inp-otro" size="32" class="inp-sol" type="text" name="otro_equipo" maxlength="22"></label></td>
@@ -230,11 +230,11 @@
                         <td><label  class="Nr"> <br> Recibido por</label></td>
                     </tr>
                 </table>
-                <div id="buttons.NotPrint" class="NotPrint">
-                    <input type="reset" value="Reset">
-                    <input type="submit" value="Enviar" name="Enviar"> <br>
-                    <br>
-                    <input type="button" onclick="location.href='../index.php'" value="Buscar">
+                <div id="NotPrint" class="NotPrint">
+                    <input id="btn-reset" type="reset" value="Reset">
+                    <input id="btn-submit" type="submit" value="Enviar" name="Enviar">
+                    <input id="btn-submit" type="button" onclick="location.href='../index.php'" value="Volver">
+                    
                 </div>
             </form>
         </div>
