@@ -5,22 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado_de_busqueda</title>
-    <link rel="stylesheet" href="css/Listado_busqueda.css">
+    <link rel="stylesheet" href="../css/Listado_busqueda.css">
 </head>
     <body>
     <?php
-            include ("includes/conexion.php");
-            $sql="SELECT I.id, Numero_Empleado, Nombre_Empleado, Cargo, Departamento, Localidad, Extension, No_Flota, asignacion, equipo, otro_equipo, lptserial, imei, model, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega FROM Informacion_Empleado AS I, Descripcion_Solicitud AS D WHERE I.id = D.id ORDER by id ASC";
+            include ("../includes/conexion.php");
+            $buscar=$_POST['buscar'];
+            $sql="SELECT I.id, Numero_Empleado, Nombre_Empleado, Cargo, Departamento, Localidad, Extension, No_Flota, asignacion, equipo, otro_equipo, lptserial, imei, model, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega FROM Informacion_Empleado AS I, Descripcion_Solicitud AS D WHERE I.id = D.id AND Numero_Empleado like '$buscar' '%' or Nombre_Empleado like '$buscar' '%' or Localidad like '$buscar' '%' or equipo like '$buscar' '%' or otro_equipo like '$buscar' '%' or imei like '$buscar' '%' or lptserial like '$buscar' '%' or model like '$buscar' '%' or asignacion like '$buscar' '%' or FechaEntrega like '$buscar' '%' ORDER by id ASC";
             $rta=mysqli_query($conn,$sql);
         ?>
-        <form action="Pages/busqueda.php" class="form-listado" method="post"  enctype="multipart/form-data">
+        <form action="../Pages/busqueda.php" class="form-listado" method="post" enctype="multipart/form-data">
             <h1 class="Form-title">Busqueda de Formulario</h1>
             <div class="container_flex">
                 <div id="search-div">
-                    <input type="text" id="form-search-inp" placeholder="Escriba aquí..." name="buscar">
+                    <input type="text" id="form-search-inp" placeholder="Escriba aquí..." name="buscar" value="<?=$buscar?>">
                     <input type="submit" id="form-search-btn" value="Buscar">
                 </div>
-                <div><input type="button" class="form-submit" onclick="location.href='Pages/nuevo.php'" value="Nuevo"></div>
+                <div><input type="button" class="form-submit" onclick="location.href='../Pages/nuevo.php'" value="Nuevo"></div>
                 
             </div>
             <table class="list-table">
@@ -58,7 +59,7 @@
                         <td><?php echo $mostrar ['13'] ?></td>
                         <td><?php echo $mostrar ['8'] ?></td>
                         <td><?php echo $mostrar ['19'] ?></td>
-                        <td><a href="Pages/editar.php?id=<?php echo $mostrar ['0']; ?>">Editar</a></td>
+                        <td><a href="../Pages/editar.php?id=<?php echo $mostrar ['0']; ?>">Editar</a></td>
                     </tr>
                     <?php
                     }
