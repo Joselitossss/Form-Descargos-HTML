@@ -108,24 +108,37 @@
                 <div id="TB-equip-div">
                     <table id="TB-equip">
                         <tr>
-                            <th class="TB-sol-th" colspan="3">TIPO Y MODELO DE EQUIPO</th>
+                            <th class="TB-sol-th" colspan="4">TIPO Y MODELO DE EQUIPO</th>
                         </tr>
                         <tr>
                             <td class="TB-sol-chk"><label for="celular"><input id="celular" type="radio" name="equipo" value="Celular" onclick="javascript:showCelularContent()" checked>Celular</label></td>
                             <td class="TB-sol-chk"><Label for="lpt"><input id="lpt" type="radio" name="equipo" value="Laptop" onclick="javascript:showLaptopContent()">Laptop</Label></td>
+                            <td class="TB-sol-chk"><Label for="imp"><input id="imp" type="radio" name="equipo" value="Impresora" onclick="javascript:showImpContent()">Impresora</Label></td>
                             <td class="TB-sol-chk"><Label for="otros"><input id="otros" type="radio" name="equipo" value="Otro Equipo" onclick="javascript:showOtherContent()">Otro</Label></td>
                         </tr>
                         <tr>
-                            <td colspan="3" class="TB-equip-lbl"><label id="lbl-otros" for="equipo">Otro Equipo:<input id="inp-otro" size="32" class="inp-sol" type="text" name="otro_equipo" maxlength="22"></label></td>
+                            <td colspan="4" class="TB-equip-lbl"><label id="lbl-otros" for="equipo">Otro Equipo:<input id="inp-otro" size="32" class="inp-sol" type="text" name="otro_equipo" maxlength="22"></label></td>
                         </tr>
                         <tr>
-                            <td colspan="3" class="TB-equip-lbl"><label id="lbl-serial" for="serial">Serial:<input id="inp-serial" size="32" class="inp-sol" type="text" name="lptserial" maxlength="22"></label></td>
+                            <td colspan="4" class="TB-equip-lbl"><label id="lbl-serial" for="serial">Serial:<input id="inp-serial" size="32" class="inp-sol" type="text" name="lptserial" maxlength="22"></label></td>
                         </tr>
                         <tr>
-                            <td colspan="3" class="TB-equip-lbl"><label id="lbl-imei"for="imei">IMEI:<input id="inp-imei" size="32" class="inp-sol" type="text" name="imei" maxlength="22" required></label></td>
+                            <td colspan="4" class="TB-equip-lbl"><label id="lbl-imei"for="imei">IMEI:<input id="inp-imei" size="32" class="inp-sol" type="text" name="imei" maxlength="22" required></label></td>
                         </tr>
                         <tr>
-                            <td colspan="3" class="TB-equip-lbl"><label id="lbl-model" for="model">Modelo:<input size="32" class="inp-sol" type="text" name="model" maxlength="22" required></label></td>
+                            <td colspan="4" class="TB-equip-lbl"><label id="lbl-model" for="model">Modelo:<input id="inp-model" size="32" class="inp-sol" type="text" name="model" maxlength="22" required></label></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="TB-equip-lbl"><label id="lbl-imp" for="modelImp">Modelo Impresora:
+                                    <datalist id="Models-IMP">
+                                        <option value="IMC300F"></option>
+                                        <option value="IM430F"></option>
+                                        <option value="P800"></option>
+                                        <option value="IM3000"></option>
+                                        <option value="IM550F"></option>
+                                    </datalist>
+                                <input id="inp-imp" size="32" list="Models-IMP" class="inp-sol" type="text" name="impmodel" maxlength="22" required></label>
+                            </td>
                         </tr>
                     </table>
                 </div>

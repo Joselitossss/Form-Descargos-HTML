@@ -465,3 +465,6 @@ display:none;
     background: hsl(0, 0%, 24%);
     color: white;
 }
+#lbl-imp{
+    display: none;
+}

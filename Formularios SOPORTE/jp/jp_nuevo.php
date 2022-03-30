@@ -41,7 +41,7 @@ if(isset($_REQUEST['Enviar'])){
         $Justificacion=$_POST ['Justificacion'];
         $FechaEntrega=$_POST ['FechaEntrega'];
         $lptserial=$_POST['lptserial'];
-        
+        $impmodel=$_POST['impmodel'];        
         //if ($celular!=1){$celular=0;}
         //if ($lpt!=1){$lpt=0;}
         //if ($otros!=1){$otros=0;}
@@ -63,12 +63,13 @@ if(isset($_REQUEST['Enviar'])){
     
     //Hacer sentencia de SQL para la tabla de Descripcion_Solicitud
         if($equipo=='Celular'){
-        $sql_desc_sol="INSERT INTO form_descargo.Descripcion_Solicitud (asignacion, equipo, otro_equipo, lptserial, imei, model, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega) VALUES ('$asignacion',
+        $sql_desc_sol="INSERT INTO form_descargo.Descripcion_Solicitud (asignacion, equipo, otro_equipo, lptserial, imei, model, impmodel, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega) VALUES ('$asignacion',
                                                     '$equipo',
                                                     'NULL',
                                                     'NULL',
                                                     '$imei',
                                                     '$model',
+                                                    'NULL',
                                                     '$acceso',
                                                     '$AccesMovil',
                                                     '$Nivel_servicio_de_datos',
@@ -76,12 +77,27 @@ if(isset($_REQUEST['Enviar'])){
                                                     '$Justificacion',
                                                     '$FechaEntrega')";
         }else if($equipo=='Laptop'){
-        $sql_desc_sol="INSERT INTO form_descargo.Descripcion_Solicitud (asignacion, equipo, otro_equipo, lptserial, imei, model, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega) VALUES ('$asignacion',
+        $sql_desc_sol="INSERT INTO form_descargo.Descripcion_Solicitud (asignacion, equipo, otro_equipo, lptserial, imei, model, impmodel, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega) VALUES ('$asignacion',
                                                     '$equipo',
                                                     'NULL',
                                                     '$lptserial',
                                                     'NULL',
                                                     '$model',
+                                                    'NULL',
+                                                    'NULL',
+                                                    'NULL',
+                                                    'NULL',
+                                                    '$fecha_form',
+                                                    '$Justificacion',
+                                                    '$FechaEntrega')";
+        }else if($equipo=='Impresora'){
+            $sql_desc_sol="INSERT INTO form_descargo.Descripcion_Solicitud (asignacion, equipo, otro_equipo, lptserial, imei, model, impmodel, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega) VALUES ('$asignacion',
+                                                    '$equipo',
+                                                    'NULL',
+                                                    '$lptserial',
+                                                    'NULL',
+                                                    'NULL',
+                                                    '$impmodel',
                                                     'NULL',
                                                     'NULL',
                                                     'NULL',
@@ -89,12 +105,13 @@ if(isset($_REQUEST['Enviar'])){
                                                     '$Justificacion',
                                                     '$FechaEntrega')";
         }else{
-            $sql_desc_sol="INSERT INTO form_descargo.Descripcion_Solicitud (asignacion, equipo, otro_equipo, lptserial, imei, model, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega) VALUES ('$asignacion',
+            $sql_desc_sol="INSERT INTO form_descargo.Descripcion_Solicitud (asignacion, equipo, otro_equipo, lptserial, imei, model, impmodel, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega) VALUES ('$asignacion',
                                                     '$equipo',
                                                     '$otro_equipo',
                                                     '$lptserial',
                                                     'NULL',
                                                     '$model',
+                                                    'NULL',
                                                     'NULL',
                                                     'NULL',
                                                     'NULL',

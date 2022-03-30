@@ -10,7 +10,7 @@
     <body>
     <?php
             include ("includes/conexion.php");
-            $sql="SELECT I.id, Numero_Empleado, Nombre_Empleado, Cargo, Departamento, Localidad, Extension, No_Flota, asignacion, equipo, otro_equipo, lptserial, imei, model, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega FROM Informacion_Empleado AS I, Descripcion_Solicitud AS D WHERE I.id = D.id ORDER by id ASC";
+            $sql="SELECT I.id, Numero_Empleado, Nombre_Empleado, Cargo, Departamento, Localidad, Extension, No_Flota, asignacion, equipo, otro_equipo, lptserial, imei, model, impmodel, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega FROM Informacion_Empleado AS I, Descripcion_Solicitud AS D WHERE I.id = D.id ORDER by id ASC";
             $rta=mysqli_query($conn,$sql);
         ?>
         <form action="Pages/busqueda.php" class="form-listado" method="post"  enctype="multipart/form-data">
@@ -51,13 +51,14 @@
                         if($mostrar['9']=='Celular'){echo $mostrar ['9'];}
                         if($mostrar['9']=='Laptop'){echo $mostrar ['9'];}
                         if($mostrar['9']=='Otro Equipo'){echo $mostrar ['10'];}
+                        if($mostrar['9']=='Impresora'){echo $mostrar ['9'];}
                         ?></td>
                         <td><?php
                         if($mostrar['9']=='Celular'){echo $mostrar ['12'];}else{echo $mostrar ['11'];}
                         ?></td>
-                        <td><?php echo $mostrar ['13'] ?></td>
+                        <td><?php if($mostrar['13']=='NULL'){echo $mostrar ['14'];}else{echo $mostrar['13'];} ?></td>
                         <td><?php echo $mostrar ['8'] ?></td>
-                        <td><?php echo $mostrar ['19'] ?></td>
+                        <td><?php echo $mostrar ['18'] ?></td>
                         <td><a href="Pages/editar.php?id=<?php echo $mostrar ['0']; ?>">Editar</a></td>
                     </tr>
                     <?php

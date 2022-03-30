@@ -14,7 +14,7 @@
 
             $id=$_GET['id'];
 
-            $tc="SELECT I.id, Numero_Empleado, Nombre_Empleado, Cargo, Departamento, Localidad, Extension, No_Flota, asignacion, equipo, otro_equipo, lptserial, imei, model, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega FROM Informacion_Empleado AS I, Descripcion_Solicitud AS D WHERE I.id = D.id AND I.id=$id ORDER by id ASC";
+            $tc="SELECT I.id, Numero_Empleado, Nombre_Empleado, Cargo, Departamento, Localidad, Extension, No_Flota, asignacion, equipo, otro_equipo, lptserial, imei, model, impmodel, acceso, AccesMovil, Nivel_servicio_de_datos, fecha_form, Justificacion, FechaEntrega FROM Informacion_Empleado AS I, Descripcion_Solicitud AS D WHERE I.id = D.id AND I.id=$id ORDER by id ASC";
             
             $rtc=mysqli_query($conn,$tc);
             $Q=mysqli_query($conn,"SELECT id, name from glpidb.glpi_locations" );
@@ -37,12 +37,13 @@
         $lptserial=$fetch['11'];
         $imei=$fetch['12'];
         $model=$fetch['13'];
-        $acceso=$fetch['14'];
-        $AccesMovil=$fetch['15'];
-        $Nivel_servicio_de_datos=$fetch['16'];
-        $fecha_form=$fetch['17'];
-        $Justificacion=$fetch['18'];
-        $FechaEntrega=$fetch['19'];
+        $impmodel=$fetch['14'];
+        $acceso=$fetch['15'];
+        $AccesMovil=$fetch['16'];
+        $Nivel_servicio_de_datos=$fetch['17'];
+        $fecha_form=$fetch['18'];
+        $Justificacion=$fetch['19'];
+        $FechaEntrega=$fetch['20'];
 
         ?>
 
@@ -139,24 +140,37 @@
                 <div id="TB-equip-div">
                     <table id="TB-equip">
                         <tr>
-                            <th class="TB-sol-th" colspan="3">TIPO Y MODELO DE EQUIPO</th>
+                            <th class="TB-sol-th" colspan="4">TIPO Y MODELO DE EQUIPO</th>
                         </tr>
                         <tr>
                             <td class="TB-sol-chk"><label for="celular"><input id="celular" type="radio" name="equipo" value="Celular" onclick="javascript:showCelularContent()" <?php if($equipo=='Celular'){echo'checked';}?>>Celular</label></td>
                             <td class="TB-sol-chk"><Label for="lpt"><input id="lpt" type="radio" name="equipo" value="Laptop" onclick="javascript:showLaptopContent()" <?php if($equipo=='Laptop'){echo'checked';}?>>Laptop</Label></td>
+                            <td class="TB-sol-chk"><Label for="imp"><input id="imp" type="radio" name="equipo" value="Impresora" onclick="javascript:showImpContent()" <?php if($equipo=='Impresora'){echo'checked';}?>>Impresora</Label></td>
                             <td class="TB-sol-chk"><Label for="otros"><input id="otros" type="radio" name="equipo" value="Otro Equipo" onclick="javascript:showOtherContent()" <?php if($equipo=='Otro Equipo'){echo'checked';}?>>Otro</Label></td>
                         </tr>
                         <tr>
-                            <td colspan="3" class="TB-equip-lbl"><label id="lbl-otros" for="equipo">Otro Equipo:<input id="inp-otro" size="32" class="inp-sol" type="text" name="otro_equipo" maxlength="22" value="<?=$otro_equipo?>"></label></td>
+                            <td colspan="4" class="TB-equip-lbl"><label id="lbl-otros" for="equipo">Otro Equipo:<input id="inp-otro" size="32" class="inp-sol" type="text" name="otro_equipo" maxlength="22" value="<?=$otro_equipo?>"></label></td>
                         </tr>
                         <tr>
-                            <td colspan="3" class="TB-equip-lbl"><label id="lbl-serial" for="serial">Serial:<input id="inp-serial" size="32" class="inp-sol" type="text" name="lptserial" maxlength="22" value="<?=$lptserial?>"></label></td>
+                            <td colspan="4" class="TB-equip-lbl"><label id="lbl-serial" for="serial">Serial:<input id="inp-serial" size="32" class="inp-sol" type="text" name="lptserial" maxlength="22" value="<?=$lptserial?>"></label></td>
                         </tr>
                         <tr>
-                            <td colspan="3" class="TB-equip-lbl"><label id="lbl-imei"for="imei">IMEI:<input id="inp-imei" size="32" class="inp-sol" type="text" name="imei" maxlength="22" required value="<?=$imei?>"></label></td>
+                            <td colspan="4" class="TB-equip-lbl"><label id="lbl-imei"for="imei">IMEI:<input id="inp-imei" size="32" class="inp-sol" type="text" name="imei" maxlength="22" required value="<?=$imei?>"></label></td>
                         </tr>
                         <tr>
-                            <td colspan="3" class="TB-equip-lbl"><label id="lbl-model" for="model">Modelo:<input size="32" class="inp-sol" type="text" name="model" maxlength="22" required value="<?=$model?>"></label></td>
+                            <td colspan="4" class="TB-equip-lbl"><label id="lbl-model" for="model">Modelo:<input id="inp-model" size="32" class="inp-sol" type="text" name="model" maxlength="22" required value="<?=$model?>"></label></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="TB-equip-lbl"><label id="lbl-imp" for="modelImp">Modelo Impresora:
+                                    <datalist id="Models-IMP">
+                                        <option value="IMC300F"></option>
+                                        <option value="IM430F"></option>
+                                        <option value="P800"></option>
+                                        <option value="IM3000"></option>
+                                        <option value="IM550F"></option>
+                                    </datalist>
+                                <input id="inp-imp" size="32" list="Models-IMP" class="inp-sol" type="text" name="impmodel" maxlength="22" value="<?=$impmodel?>"></label>
+                            </td>
                         </tr>
                     </table>
                 </div>

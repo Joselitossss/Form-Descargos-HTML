@@ -177,7 +177,7 @@ select {
 }
 .TB-equip-lbl{
     text-align: right;
-    font-size: 60%;
+    font-size: 55%;
     padding-right: 1%;
 }
 .TB-equip-input{
@@ -433,5 +433,11 @@ input[type=date]::-webkit-calendar-picker-indicator {
     display: none;
 }
 #lbl-otros{
+    display:none;
+}
+#lbl-imp{
+    display: none;
+}
+#lbl-serial{
     display:none;
 }

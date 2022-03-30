@@ -40,6 +40,7 @@ if(isset($_REQUEST['Guardar'])){
         $Justificacion=$_POST ['Justificacion'];
         $FechaEntrega=$_POST ['FechaEntrega'];
         $lptserial=$_POST['lptserial'];
+        $impmodel=$_POST['impmodel'];
         
         //if ($celular!=1){$celular=0;}
         //if ($lpt!=1){$lpt=0;}
@@ -56,11 +57,13 @@ if(isset($_REQUEST['Guardar'])){
     
     //Hacer sentencia de SQL para la tabla de Descripcion_Solicitud
         if($equipo=='Celular'){
-        $sql_desc_sol="UPDATE form_descargo.Descripcion_Solicitud SET asignacion='$asignacion', equipo='$equipo', otro_equipo='NULL', lptserial='NULL', imei='$imei', model='$model', acceso='$acceso', AccesMovil='$AccesMovil', Nivel_servicio_de_datos='$Nivel_servicio_de_datos', fecha_form='$fecha_form', Justificacion='$Justificacion', FechaEntrega='$FechaEntrega' WHERE id like '$id'";
+        $sql_desc_sol="UPDATE form_descargo.Descripcion_Solicitud SET asignacion='$asignacion', equipo='$equipo', otro_equipo='NULL', lptserial='NULL', imei='$imei', model='$model', impmodel='NULL', acceso='$acceso', AccesMovil='$AccesMovil', Nivel_servicio_de_datos='$Nivel_servicio_de_datos', fecha_form='$fecha_form', Justificacion='$Justificacion', FechaEntrega='$FechaEntrega' WHERE id like '$id'";
         }else if($equipo=='Laptop'){
-        $sql_desc_sol="UPDATE form_descargo.Descripcion_Solicitud SET asignacion='$asignacion', equipo='$equipo', otro_equipo='NULL', lptserial='$lptserial', imei='NULL', model='$model', acceso='NULL', AccesMovil='NULL', Nivel_servicio_de_datos='NULL', fecha_form='$fecha_form', Justificacion='$Justificacion', FechaEntrega='$FechaEntrega' WHERE id like '$id'";
+        $sql_desc_sol="UPDATE form_descargo.Descripcion_Solicitud SET asignacion='$asignacion', equipo='$equipo', otro_equipo='NULL', lptserial='$lptserial', imei='NULL', model='$model', impmodel='NULL', acceso='NULL', AccesMovil='NULL', Nivel_servicio_de_datos='NULL', fecha_form='$fecha_form', Justificacion='$Justificacion', FechaEntrega='$FechaEntrega' WHERE id like '$id'";
+        }else if($equipo=='Impresora'){
+        $sql_desc_sol="UPDATE form_descargo.Descripcion_Solicitud SET asignacion='$asignacion', equipo='$equipo', otro_equipo='NULL', lptserial='$lptserial', imei='NULL', model='NULL', impmodel='$impmodel', acceso='NULL', AccesMovil='NULL', Nivel_servicio_de_datos='NULL', fecha_form='$fecha_form', Justificacion='$Justificacion', FechaEntrega='$FechaEntrega' WHERE id like '$id'";   
         }else{
-        $sql_desc_sol="UPDATE form_descargo.Descripcion_Solicitud SET asignacion='$asignacion', equipo='$equipo', otro_equipo='$otro_equipo', lptserial='$lptserial', imei='NULL', model='$model', acceso='NULL', AccesMovil='NULL', Nivel_servicio_de_datos='NULL', fecha_form='$fecha_form', Justificacion='$Justificacion', FechaEntrega='$FechaEntrega' WHERE id like '$id'";
+        $sql_desc_sol="UPDATE form_descargo.Descripcion_Solicitud SET asignacion='$asignacion', equipo='$equipo', otro_equipo='$otro_equipo', lptserial='$lptserial', imei='NULL', model='$model', impmodel='NULL', acceso='NULL', AccesMovil='NULL', Nivel_servicio_de_datos='NULL', fecha_form='$fecha_form', Justificacion='$Justificacion', FechaEntrega='$FechaEntrega' WHERE id like '$id'";
         }
     //Ejecucion de las sentencias
         $ejecutar = mysqli_query($conn,$sql);
