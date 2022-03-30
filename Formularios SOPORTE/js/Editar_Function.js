@@ -58,9 +58,6 @@ if(ValorLPT) {
       lbl_imei.style.display='none'
       inp_imei.removeAttribute("required", "");
       lbl_repSim.style.display='none';
-      
-      //Ocultar valores de Laptop
-      inp_serial.value = "";
 
       //Ocultar valor de Impresora
       lbl_imp.style.display='none';
